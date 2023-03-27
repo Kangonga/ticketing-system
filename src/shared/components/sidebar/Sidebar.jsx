@@ -31,7 +31,7 @@ export default function Sidebar() {
           {Object.keys(icons).map((iconGroup) => (
           <List key={iconGroup}>
             {icons[iconGroup].map((icon,index)=>(
-              <ListItem disablePadding sx={{ display: 'block' }} key={index} onClick={()=>navigate(`${icon.route}`)}>
+              <ListItem disablePadding sx={{ display: 'block' }} key={index} onClick={()=>navigate(`admin${icon.route}`)}>
               <ListItemButton
                 sx={{
                   minHeight: 48,
@@ -53,6 +53,13 @@ export default function Sidebar() {
             </ListItem>
             ))}
             <Divider />
+
+            {/* <IconButton onClick={()=>setMode(mode==='light'?'dark':'light')}>
+                {mode==="dark"?
+                <LightModeOutlined />:
+                <DarkModeOutlined />
+                }
+              </IconButton> */}
         </List>
         ))
         }
