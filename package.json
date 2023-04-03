@@ -30,6 +30,7 @@
     "react-scripts": "5.0.1",
     "recharts": "^2.5.0",
     "sass": "^1.59.3",
+    "uuid": "^9.0.0",
     "web-vitals": "^2.1.4",
     "yup": "^1.0.2"
   },
@@ -58,6 +59,7 @@
     ]
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0"
+    "@faker-js/faker": "^7.6.0",
+    "json-server": "^0.17.3"
   }
 }

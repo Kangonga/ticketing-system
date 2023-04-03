@@ -24,7 +24,7 @@ export default function ClosedTicketsCard() {
 
           <section className='details'>
             <section>
-              <Typography color='#1E7DC6'>closed</Typography>
+              <Typography color='#1E7DC6'>Closed</Typography>
               <Box display='flex' sx={{color:'green'}}>
                 <Typography>50</Typography>
                 <KeyboardArrowUp  />
