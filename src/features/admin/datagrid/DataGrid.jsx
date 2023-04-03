@@ -6,7 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Actions, Container } from './styles';
 
 
-export default function DevsDataTable({ data }) {
+export default function DataTable({ data }) {
   const navigate = useNavigate()
   const path = useLocation().pathname.split('/')
   const location = path[path.length-1]
