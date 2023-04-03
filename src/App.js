@@ -4,7 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
 import { UserContext } from "./context/UserContext";
 import AdminDashboard from "./features/admin/components/adminDashboard/AdminDashboard";
-import DataTable from "./features/datagrid/DataGrid";
+import SingleView from "./features/admin/components/userSingleView/SingleView";
+import DataTable from "./features/admin/datagrid/DataGrid";
+import AgentDataTable from "./features/agents/datagrid/DataGrid";
+import TicketsDataTable from "./features/tickets/datagrid/DataGrid";
 import Sidebar from './shared/components/sidebar/Sidebar'
 import Topbar from "./shared/components/topbar/Topbar";
 
@@ -27,18 +30,18 @@ export default function App(){
                                     <Route index element={<AdminDashboard />}/>
                                     {/* <Route path="login" element={<Login />} /> */}
                                     <Route path="devs">
-                                        <Route index element={<DataTable />} />
-                                        {/* <Route path=":devId" element={<ListItem />} /> */}
+                                        <Route index element={<DataTable data={'devs'}/>} />
+                                        <Route path=":devId" element={<SingleView />} />
                                         {/* <Route path="new" element={<NewItem />} /> */}
                                     </Route>
                                     <Route path="tickets">
-                                        {/* <Route index element={<List />} /> */}
+                                        <Route index element={<TicketsDataTable/>} />
                                         {/* <Route path=":ticketId" element={<TicketChat />} /> */}
                                         {/* <Route path="new" element={<NewItem />} /> */}
                                     </Route>
                                     <Route path="agents">
-                                        <Route index element={<DataTable/>} />
-                                        {/* <Route path=":agentId" element={<ListItem />} /> */}
+                                        <Route index element={<AgentDataTable data={'agents'}/>} />
+                                        <Route path=":agentId" element={<SingleView />} />
                                         {/* <Route path="new" element={<NewItem />} /> */}
                                     </Route>
                                 </Route>
