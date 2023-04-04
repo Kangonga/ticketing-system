@@ -1,16 +1,16 @@
 import { Typography } from '@mui/material'
-import { agentRows } from './data/rows';
 import { agentColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { Actions, Container } from './styles';
+import { useQuery } from '@tanstack/react-query';
+import { fetchAgents } from '../../../data/fetchData';
 
 
 export default function AgentDataTable() {
   const navigate = useNavigate()
-  const path = useLocation().pathname.split('/')
-  const location = path[path.length-1]
-
+  const { isLoading, data } = useQuery(["fetchAgents"],fetchAgents, {networkMode:'offlineFirst'})
+  if(isLoading)return "Loading...";
   const handleView = ( e, params )=>{
     e.preventDefault()
     navigate(`./${params.row.id}`)
@@ -20,10 +20,7 @@ export default function AgentDataTable() {
     e.preventDefault()
     console.log(e.target.innerHTML)
   }
-
   let dataColumns = agentColumns
-  let dataRows = agentRows
-
   const actions = [{
     field:"action",
     headerName:"Action",
@@ -39,9 +36,10 @@ export default function AgentDataTable() {
   }]
   return (
     <Container>
-        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { location }</Typography>
+        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> Agents </Typography>
+        {/* {isLoading?<h1>Loading</h1>:null} */}
         <DataGrid
-            rows={dataRows}
+            rows={data}
             pageSize={2}
             initialState={{
             pagination:{paginationModel:{pageSize:10}}
