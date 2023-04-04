@@ -3,11 +3,13 @@ import { Container, Form, SubmitButton } from './styles'
 import { Formik } from 'formik'
 import * as yup from 'yup'
 import { TextField, Typography } from '@mui/material'
-import { v4 as uuidv4 } from 'uuid';
+import { IdGenerator } from 'custom-random-id'
 
-export default function CreateUser() {
+
+export default function CreateUser({type}) {
+  const date = new Date()
     const initialValues = {
-        id:uuidv4(),
+        id:type==='developer'?new IdGenerator(`dev${date.getFullYear()}{{ string_2 }}{{ number_2 }}`).getFinalExpression():new IdGenerator(`agent${date.getFullYear()}{{ string_2 }}{{ number_2 }}`).getFinalExpression(),
         firstName:'',
         lastName:'',
         tickets:'0',
@@ -42,6 +44,7 @@ export default function CreateUser() {
                       variant='filled'
                       label='id'
                       name='id'
+                      disabled
                       value = {values.id}
                       onChange={handleChange}
                       onBlur={handleBlur}
