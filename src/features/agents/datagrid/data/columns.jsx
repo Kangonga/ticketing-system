@@ -1,3 +1,5 @@
+import { Avatar } from "@mui/material";
+
 export const columns = [
     { field: 'id', headerName: 'ID', width: 70 },
     { field: 'firstName', headerName: 'First name', width: 130 },
@@ -38,17 +40,17 @@ export const devColumns = [
 ];
 
 export const agentColumns = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'id', headerName: 'ID', width: 170 },
     { field: 'firstName', headerName: 'First name', width: 130 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
-    { field: 'opened', headerName: 'Total Opened', width: 130 },
+    { field: 'openedTickets', headerName: 'Total Opened', width: 130 },
     {
       field: 'avatar',
       headerName: 'Avatar',
       width: 90,
       renderCell:(params)=>{
         return(<>
-            {params.row.avatar}
+            <Avatar src={params.row.avatar}></Avatar>
         </>)
       }
     }
