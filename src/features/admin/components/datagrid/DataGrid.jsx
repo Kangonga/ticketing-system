@@ -4,22 +4,12 @@ import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import { Actions, Container } from './styles';
 import { useQuery } from '@tanstack/react-query';
-// import { fetchDevelopers } from '../../../../data/fetchData'
-import axios from 'axios'
+import { fetchDevelopers } from '../../../../data/fetchData'
 
 export default function DataTable() {
-  const fetchDevelopers = async()=> {
-    const res = await fetch('http://localhost:5000/developers')
-    const data = await res.json()
-    return data
-}
+
   const navigate = useNavigate()
-  const { isLoading, isError, data, error, refetch } = useQuery(["repos"],()=>fetchDevelopers()
-  // axios
-  // .get('http://localhost:5000/developers')
-  // .then((res)=>res.data)
-  //
-  )
+  const { isLoading, isError, data, error } = useQuery(["fetchDevs"],fetchDevelopers, {networkMode:'offlineFirst'})
   if(isLoading)return "Loading";
   if(isError) console.log(error)
   console.log(data)
