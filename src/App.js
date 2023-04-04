@@ -11,14 +11,17 @@ import AgentDataTable from "./features/agents/datagrid/DataGrid";
 import TicketsDataTable from "./features/tickets/datagrid/DataGrid";
 import Sidebar from './shared/components/sidebar/Sidebar'
 import Topbar from "./shared/components/topbar/Topbar";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+const queryClient = new QueryClient({})
 export default function App(){
     const [ mode, useMode ] = useState('light')
     const [ user, setUser ] = useState('admin')
     return(
         <>
             <BrowserRouter>
-                <UserContext.Provider value={user}>
+            <QueryClientProvider client={queryClient}>
+                <UserContext.Provider value={{ user, setUser }}>
                     <ThemeContext.Provider value={{ mode,useMode }}>
                         <CssBaseline />
                         <Box display='flex' justifyContent='flex-start'>
@@ -74,6 +77,7 @@ export default function App(){
                         </Box>
                     </ThemeContext.Provider>
                 </UserContext.Provider>
+                </QueryClientProvider>
             </BrowserRouter>
         </>
     )
