@@ -3,9 +3,10 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
 import { UserContext } from "./context/UserContext";
-import AdminDashboard from "./features/admin/components/adminDashboard/AdminDashboard";
-import SingleView from "./features/admin/components/userSingleView/SingleView";
-import DataTable from "./features/admin/datagrid/DataGrid";
+import AdminDashboard from "./features/admin/pages/adminDashboard/AdminDashboard";
+import CreateUser from "./features/admin/pages/createUser/CreateUser";
+import SingleView from "./features/admin/pages/userSingleView/SingleView";
+import DataTable from "./features/admin/components/datagrid/DataGrid";
 import AgentDataTable from "./features/agents/datagrid/DataGrid";
 import TicketsDataTable from "./features/tickets/datagrid/DataGrid";
 import Sidebar from './shared/components/sidebar/Sidebar'
@@ -13,7 +14,7 @@ import Topbar from "./shared/components/topbar/Topbar";
 
 export default function App(){
     const [ mode, useMode ] = useState('light')
-    const [user, setUser] = useState('admin')
+    const [ user, setUser ] = useState('admin')
     return(
         <>
             <BrowserRouter>
@@ -30,9 +31,9 @@ export default function App(){
                                     <Route index element={<AdminDashboard />}/>
                                     {/* <Route path="login" element={<Login />} /> */}
                                     <Route path="devs">
-                                        <Route index element={<DataTable data={'devs'}/>} />
+                                        <Route index element={<DataTable />} />
                                         <Route path=":devId" element={<SingleView />} />
-                                        {/* <Route path="new" element={<NewItem />} /> */}
+                                        <Route path="new" element={<CreateUser type={'developer'} />} />
                                     </Route>
                                     <Route path="tickets">
                                         <Route index element={<TicketsDataTable/>} />
@@ -42,7 +43,7 @@ export default function App(){
                                     <Route path="agents">
                                         <Route index element={<AgentDataTable data={'agents'}/>} />
                                         <Route path=":agentId" element={<SingleView />} />
-                                        {/* <Route path="new" element={<NewItem />} /> */}
+                                        <Route path="new" element={<CreateUser type={'agent'}/>} />
                                     </Route>
                                 </Route>
 
