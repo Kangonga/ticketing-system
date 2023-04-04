@@ -55,11 +55,11 @@ export const agentColumns = [
 ];
 
 export const ticketColumns = [
-    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'id', headerName: 'ID', width: 170 },
     { field: 'title', headerName: 'title', width: 200 },
     { field: 'agent', headerName: 'Reported by', width: 130 },
     { field: 'status', headerName: 'Status', width: 130 },
-    { field: 'assignee', headerName: 'Assignee', width: 130},
+    { field: 'developer', headerName: 'Assignee', width: 130},
     { field: 'source', headerName: 'Source', width: 130 },
     { field: 'priority', headerName: 'Priority', width: 130 },
 ];
