@@ -1,15 +1,14 @@
 import { Typography } from '@mui/material'
-import { agentRows, userRows } from './data/rows';
-import { agentColumns, devColumns, ticketColumns } from './data/columns';
+import {  devColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Actions, Container } from './styles';
+import { useEffect, useState } from 'react';
 
 
 export default function DataTable({ data }) {
+  const [rows, setrows] = useState([])
   const navigate = useNavigate()
-  const path = useLocation().pathname.split('/')
-  const location = path[path.length-1]
   const tableUser = data
 
   const handleView = ( e, params )=>{
@@ -19,27 +18,8 @@ export default function DataTable({ data }) {
 
   const handleDelete = (e)=>{
     e.preventDefault()
-    console.log(e.target.innerHTML)
   }
-  let dataColumns = []
-  let dataRows = []
-  switch(tableUser){
-        case 'devs':{
-            dataColumns = devColumns
-            dataRows = userRows
-        break;
-        }
-        case 'agents':{
-            dataColumns = agentColumns
-            dataRows = agentRows
-        break;
-        }
-        case 'tickets':{
-            dataColumns = ticketColumns
-        break;
-        }
-        default:break
-}
+  let dataColumns = devColumns
 
   const actions = [{
     field:"action",
@@ -54,15 +34,24 @@ export default function DataTable({ data }) {
       )
     }
   }]
+  useEffect(()=>{
+    const fets = async ()=>{
+      const res = await fetch('http://localhost:5000/developers')
+      const data = await res.json()
+      setrows(data)
+  }
+  fets()
+  },[])
+
   return (
     <Container>
-        {console.log(location)}
+      {console.log(rows[0])}
         <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { tableUser }</Typography>
         <DataGrid
-            rows={dataRows}
+            rows={rows}
             pageSize={2}
             initialState={{
-            pagination:{paginationModel:{pageSize:10}}
+            pagination:{ paginationModel:{ pageSize:10 }}
             }}
             columns={dataColumns.concat(actions)}
             pageSizeOptions={[5,10,15]}
