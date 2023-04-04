@@ -3,14 +3,26 @@ import {  devColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import { Actions, Container } from './styles';
-import { useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+// import { fetchDevelopers } from '../../../../data/fetchData'
+import axios from 'axios'
 
-
-export default function DataTable({ data }) {
-  const [rows, setrows] = useState([])
+export default function DataTable() {
+  const fetchDevelopers = async()=> {
+    const res = await fetch('http://localhost:5000/developers')
+    const data = await res.json()
+    return data
+}
   const navigate = useNavigate()
-  const tableUser = data
-
+  const { isLoading, isError, data, error, refetch } = useQuery(["repos"],()=>fetchDevelopers()
+  // axios
+  // .get('http://localhost:5000/developers')
+  // .then((res)=>res.data)
+  //
+  )
+  if(isLoading)return "Loading";
+  if(isError) console.log(error)
+  console.log(data)
   const handleView = ( e, params )=>{
     e.preventDefault()
     navigate(`./${params.row.id}`)
@@ -19,7 +31,6 @@ export default function DataTable({ data }) {
   const handleDelete = (e)=>{
     e.preventDefault()
   }
-  let dataColumns = devColumns
 
   const actions = [{
     field:"action",
@@ -34,26 +45,16 @@ export default function DataTable({ data }) {
       )
     }
   }]
-  useEffect(()=>{
-    const fets = async ()=>{
-      const res = await fetch('http://localhost:5000/developers')
-      const data = await res.json()
-      setrows(data)
-  }
-  fets()
-  },[])
-
   return (
     <Container>
-      {console.log(rows[0])}
-        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { tableUser }</Typography>
+        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { 'devs' }</Typography>
         <DataGrid
-            rows={rows}
+            rows={data}
             pageSize={2}
             initialState={{
             pagination:{ paginationModel:{ pageSize:10 }}
             }}
-            columns={dataColumns.concat(actions)}
+            columns={devColumns.concat(actions)}
             pageSizeOptions={[5,10,15]}
             checkboxSelection
             slots={{
