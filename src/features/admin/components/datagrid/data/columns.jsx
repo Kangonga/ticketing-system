@@ -17,20 +17,3 @@ export const devColumns = [
       }
     }
 ];
-
-export const agentColumns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'firstName', headerName: 'First name', width: 130 },
-    { field: 'lastName', headerName: 'Last name', width: 130 },
-    { field: 'opened', headerName: 'Total Opened', width: 130 },
-    {
-      field: 'avatar',
-      headerName: 'Avatar',
-      width: 90,
-      renderCell:(params)=>{
-        return(<>
-            {params.row.avatar}
-        </>)
-      }
-    }
-];
