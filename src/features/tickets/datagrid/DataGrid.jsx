@@ -1,23 +1,23 @@
 import { Typography } from '@mui/material'
-import { ticketRows } from './data/rows';
 import { ticketColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { Actions, Container } from './styles';
-
+import { fetchTickets } from '../../../data/fetchData';
+import { useQuery } from '@tanstack/react-query';
 
 export default function TicketsDataTable() {
   const navigate = useNavigate()
-  const path = useLocation().pathname.split('/')
-  const location = path[path.length-1]
 
+  const { data, isLoading, isError, error } = useQuery(["fetchTickets"], fetchTickets, {networkMode:'offlineFirst'})
+  if(isLoading)return "Loading";
+  if(isError) console.log(error)
   const handleView = ( e, params )=>{
     e.preventDefault()
     navigate(`./${params.row.id}`)
   }
 
   let dataColumns = ticketColumns
-  let dataRows = ticketRows
 
   const actions = [{
     field:"action",
@@ -33,10 +33,9 @@ export default function TicketsDataTable() {
   }]
   return (
     <Container>
-        {console.log(location)}
-        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { location }</Typography>
+        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> Tickets</Typography>
         <DataGrid
-            rows={dataRows}
+            rows={data}
             pageSize={2}
             initialState={{
             pagination:{paginationModel:{pageSize:10}}
