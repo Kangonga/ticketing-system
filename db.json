@@ -1,173 +1,12 @@
 {
   "developers":[
-      {
+{
   "id": "dev2023LS26",
   "firstName": "Destany",
   "lastName": "Champlin",
   "email": "Destany_Champlin24@gmail.com",
-  "closedTickets": 130,
   "reopenedTickets": 57,
   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/286.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023WZ44",
-  "firstName": "Vladimir",
-  "lastName": "Torphy",
-  "email": "Vladimir.Torphy@yahoo.com",
-  "closedTickets": 57,
-  "reopenedTickets": 99,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/355.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023QB16",
-  "firstName": "Kylee",
-  "lastName": "Bartell",
-  "email": "Kylee40@gmail.com",
-  "closedTickets": 199,
-  "reopenedTickets": 64,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/306.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023IU79",
-  "firstName": "Timmy",
-  "lastName": "Predovic",
-  "email": "Timmy.Predovic68@gmail.com",
-  "closedTickets": 68,
-  "reopenedTickets": 50,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/502.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023CL89",
-  "firstName": "Scarlett",
-  "lastName": "McKenzie",
-  "email": "Scarlett.McKenzie77@gmail.com",
-  "closedTickets": 106,
-  "reopenedTickets": 87,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/276.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023OJ81",
-  "firstName": "Susanna",
-  "lastName": "Champlin",
-  "email": "Susanna.Champlin@gmail.com",
-  "closedTickets": 97,
-  "reopenedTickets": 63,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/608.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023CA98",
-  "firstName": "Demond",
-  "lastName": "Crooks",
-  "email": "Demond.Crooks@gmail.com",
-  "closedTickets": 133,
-  "reopenedTickets": 47,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/418.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023PP16",
-  "firstName": "Vita",
-  "lastName": "Leuschke",
-  "email": "Vita33@hotmail.com",
-  "closedTickets": 141,
-  "reopenedTickets": 30,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/594.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023TK92",
-  "firstName": "Kameron",
-  "lastName": "Schmeler",
-  "email": "Kameron.Schmeler65@yahoo.com",
-  "closedTickets": 36,
-  "reopenedTickets": 41,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1164.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023ZN46",
-  "firstName": "Mallie",
-  "lastName": "Bernhard",
-  "email": "Mallie79@hotmail.com",
-  "closedTickets": 31,
-  "reopenedTickets": 13,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/621.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023LJ91",
-  "firstName": "Noe",
-  "lastName": "Orn",
-  "email": "Noe_Orn@gmail.com",
-  "closedTickets": 76,
-  "reopenedTickets": 12,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/210.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023GG82",
-  "firstName": "Allison",
-  "lastName": "Heaney",
-  "email": "Allison_Heaney@yahoo.com",
-  "closedTickets": 0,
-  "reopenedTickets": 34,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/169.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023GU21",
-  "firstName": "Aisha",
-  "lastName": "Mosciski",
-  "email": "Aisha.Mosciski@gmail.com",
-  "closedTickets": 105,
-  "reopenedTickets": 98,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1120.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023AG25",
-  "firstName": "Pasquale",
-  "lastName": "Hansen",
-  "email": "Pasquale94@yahoo.com",
-  "closedTickets": 43,
-  "reopenedTickets": 17,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/414.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023TW68",
-  "firstName": "Alexandro",
-  "lastName": "Schiller",
-  "email": "Alexandro80@yahoo.com",
-  "closedTickets": 54,
-  "reopenedTickets": 6,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/212.jpg",
-  "status": "offline"
-},
-{
-  "id": "dev2023FC82",
-  "firstName": "Laverne",
-  "lastName": "Walter",
-  "email": "Laverne_Walter@yahoo.com",
-  "closedTickets": 109,
-  "reopenedTickets": 8,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/36.jpg",
-  "status": "online"
-},
-{
-  "id": "dev2023SU79",
-  "firstName": "Zachery",
-  "lastName": "Becker",
-  "email": "Zachery52@hotmail.com",
-  "closedTickets": 54,
-  "reopenedTickets": 15,
-  "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/219.jpg",
   "status": "offline"
 },
 {
@@ -175,7 +14,6 @@
   "firstName": "Zackery",
   "lastName": "Leffler",
   "email": "Zackery_Leffler@hotmail.com",
-  "closedTickets": 103,
   "reopenedTickets": 100,
   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1237.jpg",
   "status": "online"
@@ -185,7 +23,6 @@
   "firstName": "Elsie",
   "lastName": "Armstrong",
   "email": "Elsie20@yahoo.com",
-  "closedTickets": 190,
   "reopenedTickets": 75,
   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/250.jpg",
   "status": "online"
@@ -195,7 +32,6 @@
   "firstName": "Berta",
   "lastName": "Hettinger",
   "email": "Berta81@hotmail.com",
-  "closedTickets": 64,
   "reopenedTickets": 34,
   "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1044.jpg",
   "status": "offline"
@@ -212,42 +48,6 @@
           "status": "offline"
         },
         {
-          "id": "agent2023AH58",
-          "firstName": "Ephraim",
-          "lastName": "Brekke",
-          "email": "Ephraim.Brekke@hotmail.com",
-          "openedTickets": 131,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/175.jpg",
-          "status": "online"
-        },
-        {
-          "id": "agent2023HV37",
-          "firstName": "Nikki",
-          "lastName": "Bernier",
-          "email": "Nikki_Bernier@hotmail.com",
-          "openedTickets": 106,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/935.jpg",
-          "status": "offline"
-        },
-        {
-          "id": "agent2023XA37",
-          "firstName": "Leo",
-          "lastName": "Mills",
-          "email": "Leo_Mills61@yahoo.com",
-          "openedTickets": 71,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/731.jpg",
-          "status": "online"
-        },
-        {
-          "id": "agent2023HC18",
-          "firstName": "Royal",
-          "lastName": "Nikolaus",
-          "email": "Royal.Nikolaus@yahoo.com",
-          "openedTickets": 19,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/338.jpg",
-          "status": "online"
-        },
-        {
           "id": "agent2023DF97",
           "firstName": "Janie",
           "lastName": "Willms",
@@ -255,51 +55,6 @@
           "openedTickets": 61,
           "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1152.jpg",
           "status": "online"
-        },
-        {
-          "id": "agent2023RZ64",
-          "firstName": "Lee",
-          "lastName": "Hegmann",
-          "email": "Lee.Hegmann@gmail.com",
-          "openedTickets": 142,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/623.jpg",
-          "status": "online"
-        },
-        {
-          "id": "agent2023WI32",
-          "firstName": "Margarete",
-          "lastName": "Conn",
-          "email": "Margarete.Conn76@gmail.com",
-          "openedTickets": 64,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/832.jpg",
-          "status": "offline"
-        },
-        {
-          "id": "agent2023AI83",
-          "firstName": "Rodolfo",
-          "lastName": "Stoltenberg",
-          "email": "Rodolfo_Stoltenberg63@hotmail.com",
-          "openedTickets": 147,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1036.jpg",
-          "status": "offline"
-        },
-        {
-          "id": "agent2023RV85",
-          "firstName": "Augustine",
-          "lastName": "Stroman",
-          "email": "Augustine.Stroman@gmail.com",
-          "openedTickets": 32,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/661.jpg",
-          "status": "offline"
-        },
-        {
-          "id": "agent2023ZJ81",
-          "firstName": "Kolby",
-          "lastName": "Rau",
-          "email": "Kolby.Rau@gmail.com",
-          "openedTickets": 39,
-          "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1061.jpg",
-          "status": "offline"
         },
         {
           "id": "agent2023TC25",
@@ -384,245 +139,245 @@
         }
   ],
   "tickets":[
-      {
-          "id": "ticket2023ZT56",
-          "title": "Dolorem.",
-          "description": "Architecto cumque accusamus sequi animi.",
-          "status": "closed",
-          "agent": "Sophia Moore",
-          "developer": "Reginald Koch",
-          "source": "twitter",
-          "priority": "low",
-          "createdTime": "2023-01-02T17:20:40.272Z",
-          "closedTime": "2023-04-03T08:00:13.721Z"
-      },
-      {
-          "id": "ticket2023AX15",
-          "title": "Nihil.",
-          "description": "Doloremque ratione quae similique temporibus.",
-          "status": "closed",
-          "agent": "Dr. Pablo Hane",
-          "developer": "Mrs. Helen Hills",
-          "source": "twitter",
-          "priority": "low",
-          "createdTime": "2022-08-26T05:13:43.237Z",
-          "closedTime": "2023-04-03T20:39:07.493Z"
-      },
-      {
-          "id": "ticket2023AO67",
-          "title": "Consequuntur.",
-          "description": "Possimus hic libero rerum ratione.",
-          "status": "open",
-          "agent": "Tonya Hartmann",
-          "developer": "Wm Cronin",
-          "source": "whatsApp",
-          "priority": "medium",
-          "createdTime": "2022-08-24T19:37:25.811Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023VV93",
-          "title": "Animi.",
-          "description": "Quibusdam cum voluptates exercitationem ratione.",
-          "status": "open",
-          "agent": "Julia Lakin",
-          "developer": "Elsa Sporer",
-          "source": "other",
-          "priority": "low",
-          "createdTime": "2022-04-11T16:48:23.862Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023OK89",
-          "title": "Esse.",
-          "description": "Veniam dolorum nihil suscipit aut.",
-          "status": "closed",
-          "agent": "Patty Larson",
-          "developer": "Miss Trevor Dach",
-          "source": "other",
-          "priority": "high",
-          "createdTime": "2023-01-15T02:35:59.734Z",
-          "closedTime": "2023-04-03T13:26:35.768Z"
-      },
-      {
-          "id": "ticket2023GY25",
-          "title": "Eaque.",
-          "description": "Perferendis sint repellat molestiae libero.",
-          "status": "closed",
-          "agent": "Bryan Jones",
-          "developer": "Eunice Muller",
-          "source": "whatsApp",
-          "priority": "medium",
-          "createdTime": "2022-04-17T17:11:43.407Z",
-          "closedTime": "2023-04-03T06:16:23.829Z"
-      },
-      {
-          "id": "ticket2023WR66",
-          "title": "Odit.",
-          "description": "Laboriosam possimus sunt exercitationem quis.",
-          "status": "closed",
-          "agent": "Angelina Marquardt Sr.",
-          "developer": "Everett Schamberger",
-          "source": "other",
-          "priority": "high",
-          "createdTime": "2023-01-27T23:33:15.301Z",
-          "closedTime": "2023-04-03T16:29:42.020Z"
-      },
-      {
-          "id": "ticket2023BN62",
-          "title": "Autem.",
-          "description": "Laborum eveniet itaque adipisci alias.",
-          "status": "closed",
-          "agent": "Emma Balistreri",
-          "developer": "Sheldon Bahringer",
-          "source": "calls",
-          "priority": "low",
-          "createdTime": "2022-09-15T21:28:50.157Z",
-          "closedTime": "2023-04-03T07:21:49.640Z"
-      },
-      {
-          "id": "ticket2023XF43",
-          "title": "Accusamus.",
-          "description": "Dignissimos quis et dolorum pariatur.",
-          "status": "open",
-          "agent": "Shane Schaden",
-          "developer": "Vanessa Mann",
-          "source": "other",
-          "priority": "low",
-          "createdTime": "2022-08-28T12:24:03.386Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023UA19",
-          "title": "Debitis.",
-          "description": "Asperiores nobis incidunt rerum repellendus.",
-          "status": "closed",
-          "agent": "Catherine Leannon",
-          "developer": "Marlene Leuschke",
-          "source": "other",
-          "priority": "high",
-          "createdTime": "2022-11-28T15:38:43.098Z",
-          "closedTime": "2023-04-03T10:23:59.482Z"
-      },
-      {
-          "id": "ticket2023GN98",
-          "title": "Molestias.",
-          "description": "Doloribus alias aspernatur odio repellendus.",
-          "status": "open",
-          "agent": "Gina Beier DDS",
-          "developer": "Alexis Deckow",
-          "source": "twitter",
-          "priority": "medium",
-          "createdTime": "2023-01-25T20:13:27.618Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023UK13",
-          "title": "Aliquam.",
-          "description": "Dolorum sint aspernatur sunt facere.",
-          "status": "open",
-          "agent": "Alonzo Emmerich",
-          "developer": "Caroline Braun",
-          "source": "calls",
-          "priority": "low",
-          "createdTime": "2022-11-18T01:17:42.939Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023RV48",
-          "title": "Eligendi.",
-          "description": "Perspiciatis dolores nihil fugit est.",
-          "status": "closed",
-          "agent": "Judy Kessler",
-          "developer": "Theresa Lindgren",
-          "source": "twitter",
-          "priority": "high",
-          "createdTime": "2022-10-29T05:43:14.850Z",
-          "closedTime": "2023-04-03T13:08:06.352Z"
-      },
-      {
-          "id": "ticket2023PR56",
-          "title": "Mollitia.",
-          "description": "Ipsa aut pariatur voluptatum illo.",
-          "status": "closed",
-          "agent": "Tony Wintheiser",
-          "developer": "Bradley Blanda",
-          "source": "other",
-          "priority": "medium",
-          "createdTime": "2022-11-11T22:00:55.892Z",
-          "closedTime": "2023-04-03T08:39:09.795Z"
-      },
-      {
-          "id": "ticket2023TF94",
-          "title": "At.",
-          "description": "Minus vitae error libero consectetur.",
-          "status": "open",
-          "agent": "Damon Kris",
-          "developer": "Roxanne Jenkins",
-          "source": "whatsApp",
-          "priority": "high",
-          "createdTime": "2022-12-28T06:51:29.594Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023VI35",
-          "title": "Consequuntur.",
-          "description": "Suscipit harum sed cum necessitatibus.",
-          "status": "closed",
-          "agent": "Jacqueline Gleichner",
-          "developer": "Lynda Hartmann",
-          "source": "calls",
-          "priority": "medium",
-          "createdTime": "2022-11-26T22:21:52.790Z",
-          "closedTime": "2023-04-03T11:05:57.003Z"
-      },
-      {
-          "id": "ticket2023EH15",
-          "title": "Odio.",
-          "description": "Sunt fugiat ratione reprehenderit fugiat.",
-          "status": "closed",
-          "agent": "Vincent Satterfield",
-          "developer": "Dianne Senger",
-          "source": "twitter",
-          "priority": "high",
-          "createdTime": "2022-08-28T19:38:41.969Z",
-          "closedTime": "2023-04-03T02:19:07.585Z"
-      },
-      {
-          "id": "ticket2023HJ55",
-          "title": "Quidem.",
-          "description": "Ducimus ea facere voluptate tenetur.",
-          "status": "closed",
-          "agent": "Hope Hodkiewicz II",
-          "developer": "Dr. Donnie Raynor",
-          "source": "other",
-          "priority": "low",
-          "createdTime": "2022-08-22T07:22:50.055Z",
-          "closedTime": "2023-04-03T20:28:25.555Z"
-      },
-      {
-          "id": "ticket2023YQ42",
-          "title": "Reprehenderit.",
-          "description": "Quibusdam fugit nesciunt ab corporis.",
-          "status": "open",
-          "agent": "Sammy Gorczany",
-          "developer": "Alan Schuster",
-          "source": "whatsApp",
-          "priority": "low",
-          "createdTime": "2023-02-19T07:19:01.490Z",
-          "closedTime": "null"
-      },
-      {
-          "id": "ticket2023IB87",
-          "title": "Laborum.",
-          "description": "Odit ex consequuntur quisquam corrupti.",
-          "status": "closed",
-          "agent": "Glenn Stroman",
-          "developer": "Mr. Jennie Hansen",
-          "source": "whatsApp",
-          "priority": "medium",
-          "createdTime": "2022-09-21T12:33:42.888Z",
-          "closedTime": "2023-04-03T11:34:25.100Z"
-      }
+    {
+      "id": "ticket2023JZ97",
+      "title": "Dolore.",
+      "description": "Eum perferendis temporibus natus nulla.",
+      "status": "closed",
+      "agent": "agent2023AH58",
+      "developer": "dev2023QB16",
+      "source": "calls",
+      "priority": "low",
+      "createdTime": "2022-04-16T13:07:59.383Z",
+      "closedTime": "2023-04-04T09:58:53.034Z"
+    },
+    {
+      "id": "ticket2023VW52",
+      "title": "Nobis.",
+      "description": "Fugiat commodi accusamus quidem est.",
+      "status": "closed",
+      "agent": "agent2023HC18",
+      "developer": "dev2023IU79",
+      "source": "twitter",
+      "priority": "medium",
+      "createdTime": "2022-11-09T06:26:01.653Z",
+      "closedTime": "2023-04-04T14:16:52.686Z"
+    },
+    {
+      "id": "ticket2023NX13",
+      "title": "Sint.",
+      "description": "Placeat magnam cupiditate impedit dolor.",
+      "status": "open",
+      "agent": "agent2023DF97",
+      "developer": "dev2023QB16",
+      "source": "other",
+      "priority": "medium",
+      "createdTime": "2022-06-26T15:28:15.541Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023HA64",
+      "title": "Eligendi.",
+      "description": "Nesciunt quo nostrum repellat maxime.",
+      "status": "open",
+      "agent": "agent2023XA37",
+      "developer": "dev2023CL89",
+      "source": "calls",
+      "priority": "medium",
+      "createdTime": "2023-03-18T16:56:06.660Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023XM83",
+      "title": "Consectetur.",
+      "description": "Consequuntur quaerat dolorum ducimus iusto.",
+      "status": "closed",
+      "agent": "agent2023IA77",
+      "developer": "dev2023WZ44",
+      "source": "twitter",
+      "priority": "high",
+      "createdTime": "2022-06-22T15:44:02.805Z",
+      "closedTime": "2023-04-03T21:06:37.486Z"
+    },
+    {
+      "id": "ticket2023OO55",
+      "title": "Ab.",
+      "description": "Fugiat enim rerum consequuntur tempora.",
+      "status": "open",
+      "agent": "agent2023AH58",
+      "developer": "dev2023QB16",
+      "source": "calls",
+      "priority": "low",
+      "createdTime": "2023-01-05T16:37:42.814Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023QM71",
+      "title": "Ducimus.",
+      "description": "Dolores impedit quis laboriosam nesciunt.",
+      "status": "closed",
+      "agent": "agent2023IA77",
+      "developer": "dev2023QB16",
+      "source": "whatsApp",
+      "priority": "high",
+      "createdTime": "2022-09-20T07:20:25.820Z",
+      "closedTime": "2023-04-04T19:43:36.934Z"
+    },
+    {
+      "id": "ticket2023JN58",
+      "title": "Libero.",
+      "description": "Molestias aspernatur asperiores voluptate natus.",
+      "status": "open",
+      "agent": "agent2023HV37",
+      "developer": "dev2023LS26",
+      "source": "whatsApp",
+      "priority": "medium",
+      "createdTime": "2022-08-06T14:46:26.377Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023HS27",
+      "title": "Occaecati.",
+      "description": "tempore similique aperiam repellendus eligendi.",
+      "status": "open",
+      "agent": "agent2023HV37",
+      "developer": "dev2023WZ44",
+      "source": "calls",
+      "priority": "low",
+      "createdTime": "2022-10-27T19:14:25.571Z",
+      "closedTime": " null"
+    },
+    {
+      "id": "ticket2023OL27",
+      "title": "Recusandae.",
+      "description": "Mollitia veniam eum adipisci quis.",
+      "status": "closed",
+      "agent": "agent2023HC18",
+      "developer": "dev2023LS26",
+      "source": "calls",
+      "priority": "high",
+      "createdTime": "2022-07-03T20:41:07.472Z",
+      "closedTime": "2023-04-04T10:09:41.633Z"
+    },
+    {
+      "id": "ticket2023VW96",
+      "title": "Aliquam.",
+      "description": "Molestias illum inventore officia corporis.",
+      "status": "open",
+      "agent": "agent2023IA77",
+      "developer": "dev2023QB16",
+      "source": "whatsApp",
+      "priority": "high",
+      "createdTime": "2022-04-09T03:39:54.176Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023HZ32",
+      "title": "Eos.",
+      "description": "Voluptas itaque nam praesentium incidunt.",
+      "status": "open",
+      "agent": "agent2023DF97",
+      "developer": "dev2023WZ44",
+      "source": "twitter",
+      "priority": "high",
+      "createdTime": "2022-08-26T02:27:56.528Z",
+      "closedTime": " null"
+    },
+    {
+      "id": "ticket2023NP91",
+      "title": "Possimus.",
+      "description": "Ducimus sit cupiditate corporis molestias.",
+      "status": "closed",
+      "agent": "agent2023XA37",
+      "developer": "dev2023IU79",
+      "source": "other",
+      "priority": "high",
+      "createdTime": "2023-03-31T19:34:44.616Z",
+      "closedTime": "2023-04-03T23:06:58.821Z"
+    },
+    {
+      "id": "ticket2023OK68",
+      "title": "Quibusdam.",
+      "description": "Aspernatur beatae qui iusto eligendi.",
+      "status": "closed",
+      "agent": "agent2023HV37",
+      "developer": "dev2023WZ44",
+      "source": "calls",
+      "priority": "low",
+      "createdTime": "2022-06-16T21:08:49.598Z",
+      "closedTime": "2023-04-04T17:44:57.309Z"
+    },
+    {
+      "id": "ticket2023XP63",
+      "title": "Quaerat.",
+      "description": "Explicabo sint quibusdam incidunt quasi.",
+      "status": "open",
+      "agent": "agent2023DF97",
+      "developer": "dev2023CL89",
+      "source": "other",
+      "priority": "high",
+      "createdTime": "2022-07-31T20:03:00.962Z",
+      "closedTime": " null"
+    },
+    {
+      "id": "ticket2023KS43",
+      "title": "Minima.",
+      "description": "Impedit nam voluptates eaque sapiente.",
+      "status": "open",
+      "agent": "agent2023HV37",
+      "developer": "dev2023LS26",
+      "source": "twitter",
+      "priority": "high",
+      "createdTime": "2023-03-25T02:31:34.721Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023PM22",
+      "title": "Molestiae.",
+      "description": "Veritatis illum ducimus ipsum dolorem.",
+      "status": "open",
+      "agent": "agent2023XA37",
+      "developer": "dev2023WZ44",
+      "source": "other",
+      "priority": "low",
+      "createdTime": "2023-04-01T14:35:28.703Z",
+      "closedTime": "null"
+    },
+    {
+      "id": "ticket2023SE55",
+      "title": "Amet.",
+      "description": "Quos architecto dignissimos perspiciatis recusandae.",
+      "status": "closed",
+      "agent": "agent2023AH58",
+      "developer": "dev2023WZ44",
+      "source": "other",
+      "priority": "medium",
+      "createdTime": "2022-09-12T08:26:14.434Z",
+      "closedTime": "2023-04-04T11:34:20.314Z"
+    },
+    {
+      "id": "ticket2023EN21",
+      "title": "Fuga.",
+      "description": "Praesentium neque eaque dolorum vero.",
+      "status": "open",
+      "agent": "agent2023HV37",
+      "developer": "dev2023CL89",
+      "source": "whatsApp",
+      "priority": "medium",
+      "createdTime": "2022-04-21T21:05:46.015Z",
+      "closedTime": " null"
+    },
+    {
+      "id": "ticket2023SB45",
+      "title": "Sint.",
+      "description": "Quasi quaerat omnis earum ducimus.",
+      "status": "closed",
+      "agent": "agent2023AH58",
+      "developer": "dev2023LS26",
+      "source": "other",
+      "priority": "high",
+      "createdTime": "2023-02-22T00:08:41.856Z",
+      "closedTime": "2023-04-04T01:17:15.473Z"
+    }
   ]
 }
