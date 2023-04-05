@@ -2,9 +2,13 @@ import { Typography } from '@mui/material'
 import {  devColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
-import { Actions, Container } from './styles';
+import { Actions, ComponentContainer } from './styles';
 import { useQuery } from '@tanstack/react-query';
 import { fetchDevelopers } from '../../../../data/fetchData'
+import { useState } from 'react';
+import { Container } from '../../../../shared/styles/styles';
+import Sidebar from '../../../../shared/components/sidebar/Sidebar';
+import Topbar from '../../../../shared/components/topbar/Topbar';
 
 export default function DataTable() {
 
@@ -12,7 +16,6 @@ export default function DataTable() {
   const { isLoading, isError, data, error } = useQuery(["fetchDevs"],fetchDevelopers, {networkMode:'offlineFirst'})
   if(isLoading)return "Loading";
   if(isError) console.log(error)
-  console.log(data)
   const handleView = ( e, params )=>{
     e.preventDefault()
     navigate(`./${params.row.id}`)
@@ -37,7 +40,10 @@ export default function DataTable() {
   }]
   return (
     <Container>
-        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { 'devs' }</Typography>
+      <Sidebar/>
+      <ComponentContainer>
+        <Topbar></Topbar>
+      <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { 'devs' }</Typography>
         <DataGrid
             rows={data}
             pageSize={2}
@@ -51,6 +57,8 @@ export default function DataTable() {
             toolbar: GridToolbar,
             }}
         />
+      </ComponentContainer>
+        
     </Container>
   );
 }

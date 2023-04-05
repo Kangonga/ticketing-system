@@ -2,9 +2,13 @@ import { Typography } from '@mui/material'
 import { ticketColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import {  useNavigate } from 'react-router-dom';
-import { Actions, Container } from './styles';
+import { Actions, ComponentContainer } from './styles';
 import { fetchTickets } from '../../../data/fetchData';
 import { useQuery } from '@tanstack/react-query';
+
+import { Container } from '../../../shared/styles/styles';
+import Sidebar from '../../../shared/components/sidebar/Sidebar';
+import Topbar from '../../../shared/components/topbar/Topbar';
 
 export default function TicketsDataTable() {
   const navigate = useNavigate()
@@ -33,6 +37,9 @@ export default function TicketsDataTable() {
   }]
   return (
     <Container>
+      <Sidebar></Sidebar>
+    <ComponentContainer>
+      <Topbar></Topbar>
         <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> Tickets</Typography>
         <DataGrid
             rows={data}
@@ -47,6 +54,7 @@ export default function TicketsDataTable() {
             toolbar: GridToolbar,
             }}
         />
+    </ComponentContainer>
     </Container>
   );
 }

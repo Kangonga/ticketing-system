@@ -1,13 +1,18 @@
 import { Typography } from '@mui/material'
 import { images } from '../../../../assets'
 import AreaChart from '../../../../shared/components/charts/areaChart/AreaChart'
-import { ChartContainer, Container, DataTableContainer, TopContainer, UserContainer } from './styles'
+import { ChartContainer, DataTableContainer, TopContainer, UserContainer, ComponentContainer } from './styles'
+import { Container } from '../../../../shared/styles/styles'
+import  Sidebar  from '../../../../shared/components/sidebar/Sidebar'
+import Topbar from '../../../../shared/components/topbar/Topbar'
 
 export default function SingleView() {
   return (
     <Container>
-          <Typography>Developer data</Typography>
-
+      <Sidebar></Sidebar>
+    <ComponentContainer>
+    <Topbar></Topbar>
+      <Typography>Developer data</Typography>
       <TopContainer>
         <UserContainer>
           <figure>
@@ -29,6 +34,7 @@ export default function SingleView() {
       </TopContainer>
 
       <DataTableContainer></DataTableContainer>
+      </ComponentContainer>
     </Container>
   )
 }

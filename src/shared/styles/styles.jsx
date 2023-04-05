@@ -8,3 +8,9 @@ export const Card = styled('div')(({theme})=>({
     width: ' 300px',
     margin: ' 0 auto',
 }))
+
+export const Container = styled('div')(({ theme }) => ({
+    display: 'flex',
+    backgroundColor:'#fcfcfc',
+    height:'max-content',
+}))

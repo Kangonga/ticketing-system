@@ -1,6 +1,13 @@
 import { styled } from "@mui/material";
 
-export const Container = styled('div')(({ theme })=> ({
+
+export const ComponentContainer = styled('div')(({ theme }) => ({
+    flex:2,
+    display: 'flex',
+    flexDirection:'column',
+    backgroundColor:'#fcfcfc',
+    height:'max-content',
+    padding:'0 1rem',
     height: '85vh',
     overflow:'auto',
 
@@ -16,8 +23,6 @@ export const Container = styled('div')(({ theme })=> ({
         margin:'auto',
     }
 }))
-
-
 
 export const Actions = styled('div')(({ theme })=> ({
     display: 'flex',

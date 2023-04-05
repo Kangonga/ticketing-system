@@ -3,8 +3,10 @@ import { agentRows, userRows } from './data/rows';
 import { agentColumns, devColumns, ticketColumns, userColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Actions, Container } from './styles';
-
+import { Actions, ComponentContainer } from './styles';
+import { Container } from '../../../shared/styles/styles'
+import  Sidebar  from '../../../shared/components/sidebar/Sidebar'
+import  Topbar  from '../../../shared/components/topbar/Topbar'
 
 export default function DataTable({ type, status}) {
   const navigate = useNavigate()
@@ -55,7 +57,9 @@ export default function DataTable({ type, status}) {
   }]
   return (
     <Container>
-        {console.log(location)}
+      <Sidebar></Sidebar>
+    <ComponentContainer>
+      <Topbar></Topbar>
         <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { location }</Typography>
         <DataGrid
             rows={dataRows}
@@ -70,6 +74,7 @@ export default function DataTable({ type, status}) {
             toolbar: GridToolbar,
             }}
         />
+    </ComponentContainer>
     </Container>
   );
 }

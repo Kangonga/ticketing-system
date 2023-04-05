@@ -1,10 +1,11 @@
 import { styled } from "@mui/material"
 
-export const Container = styled('div')(({ theme })=>({
-    padding:'1rem',
+export const ComponentContainer = styled('div')(({ theme })=>({
+    padding:'0 1rem',
     display:'flex',
     flexDirection:'column',
-    gap:'1rem'
+    gap:'1rem',
+    flex:2
 }))
 
 export const TopContainer = styled('div')(({ theme })=>({
