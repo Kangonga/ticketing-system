@@ -1,12 +1,18 @@
 import React from 'react'
+import Sidebar from '../../../../shared/components/sidebar/Sidebar'
+import { Container } from '../../../../shared/components/topbar/styles'
+import Topbar from '../../../../shared/components/topbar/Topbar'
 import ClosedTicketsCard from '../../components/closedTicketsCard/ClosedTicketsCard'
 import TicketSourcesChart from '../../components/ticketSourcesChart/TicketSourcesChart'
 import Widget from '../../components/widgets/widget'
-import { Charts,  Container, Widgets } from './styles'
+import { Charts,  ComponentContainer, Widgets } from './styles'
 
 export default function AdminDashboard() {
   return (
     <Container>
+        <Sidebar />
+        <ComponentContainer>
+        <Topbar />
         <Widgets>
             <Widget type='devs'></Widget>
             <Widget type='agents'></Widget>
@@ -18,6 +24,8 @@ export default function AdminDashboard() {
           <ClosedTicketsCard></ClosedTicketsCard>
           <TicketSourcesChart></TicketSourcesChart>
         </Charts>
+        </ComponentContainer>
+        
     </Container>
   )
 }
