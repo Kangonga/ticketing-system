@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { Actions, ComponentContainer } from './styles';
 import { useQuery } from '@tanstack/react-query';
 import { fetchDevelopers } from '../../../../data/fetchData'
-import { useState } from 'react';
 import { Container } from '../../../../shared/styles/styles';
 import Sidebar from '../../../../shared/components/sidebar/Sidebar';
 import Topbar from '../../../../shared/components/topbar/Topbar';
