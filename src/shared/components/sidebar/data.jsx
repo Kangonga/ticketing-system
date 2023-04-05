@@ -5,48 +5,48 @@ export const icons = {
       {
       name:'dashboard',
       icon:<HomeOutlined />,
-      route:'/'
+      route:'/admin/'
       }
     ],
     lists:[
       {
       name:'Developers',
       icon:<EngineeringOutlined />,
-      route:'/devs'
+      route:'/admin/devs'
     },
     {
       name:'Agents',
       icon:<SupportAgentOutlined />,
-      route:'/agents'
+      route:'/admin/agents'
     },
     {
       name:'Tickets',
       icon: <BugReportOutlined />,
-      route:'/tickets'
+      route:'/admin/tickets'
     }
     ],
     utilities: [
       {
       name:'Statistics',
       icon:<AnalyticsOutlined />,
-      route:'/statistics'
+      route:'/admin/statistics'
     },
     {
       name:'FAQs',
       icon:<LiveHelpOutlined />,
-      route:'/faq'
+      route:'/admin/faq'
     }
     ],
     user:[
       {
         name:'Profile',
         icon:<PersonOutlined />,
-        route:'/me'
+        route:'/admin/me'
       },
       {
         name:'Log Out',
         icon:<LogoutOutlined />,
-        route:'/'
+        route:'/admin/'
       }
     ],
   }
