@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { ticketColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import {  useNavigate } from 'react-router-dom';
@@ -54,6 +54,7 @@ export default function TicketsDataTable() {
             toolbar: GridToolbar,
             }}
         />
+        <Button onClick={()=>navigate('new')} sx={{width:'max-content',color:'black', padding:'.5rem 1rem', margin:'auto', backgroundColor:'coral'}}>Create new ticket</Button>
     </ComponentContainer>
     </Container>
   );

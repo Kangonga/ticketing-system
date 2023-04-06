@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { agentColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
 import {  useNavigate } from 'react-router-dom';
@@ -57,6 +57,7 @@ export default function AgentDataTable() {
             toolbar: GridToolbar,
             }}
         />
+        <Button onClick={()=>navigate('new')} sx={{width:'max-content',color:'black', padding:'.5rem 1rem', margin:'auto', backgroundColor:'coral'}}>Create new Agent account</Button>
     </ComponentContainer>
     </Container>
   );

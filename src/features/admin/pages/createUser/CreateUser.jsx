@@ -1,10 +1,13 @@
 import React from 'react'
-import { Container, Form, SubmitButton } from './styles'
+import { ComponentContainer } from './styles'
 import { Formik } from 'formik'
 import * as yup from 'yup'
-import { TextField, Typography } from '@mui/material'
+import { Button, TextField, Typography } from '@mui/material'
 import { IdGenerator } from 'custom-random-id'
-
+import { Container } from '../../../../shared/styles/styles'
+import Sidebar from '../../../../shared/components/sidebar/Sidebar'
+import Topbar from '../../../../shared/components/topbar/Topbar'
+import { postDeveloper } from '../../../../data/postData'
 
 export default function CreateUser({type}) {
   const date = new Date()
@@ -14,6 +17,7 @@ export default function CreateUser({type}) {
         lastName:'',
         tickets:'0',
         imgUrl:'',
+        email:'',
         password:'12345',
         status:''
     }
@@ -21,26 +25,33 @@ export default function CreateUser({type}) {
         id: yup.string(),
         firstName: yup.string().required('First name is required'),
         lastName: yup.string().required('Last name is required'),
+        email:yup.string().email().required('Please enter a valid email'),
         tickets: yup.string().required('Default value should be present'),
         imgUrl:yup.string(),
         password:yup.string().required('A default value is required'),
         status:yup.string().required('default status is required')
     })
-    const handleSubmit = (data)=>{
-        console.log(data)
+    const handleSubmit = (values)=>{
+      postDeveloper(values)
     }
   return (
     <Container>
-        <Typography>Create a new user</Typography>
+      <Sidebar />
+      <ComponentContainer>
+        <Topbar />
+        <Typography textAlign='center' fontSize='1.2rem' margin='1rem' color='gray'>
+          Create a new {type==='developer'?'Developer':'Agent'} account
+        </Typography>
         <Formik
-              handleSubmit={handleSubmit}
+              onSubmit={handleSubmit}
               initialValues={initialValues}
               validationSchema={userSchema}
               >
               {
                 ({values, errors, touched, handleChange, handleSubmit, handleBlur})=>(
-                  <Form onSubmit={handleSubmit}>
+                  <form onSubmit={handleSubmit}>
                     <TextField
+                      type='text'
                       variant='filled'
                       label='id'
                       name='id'
@@ -95,6 +106,18 @@ export default function CreateUser({type}) {
                       error={!!touched.tickets && !!errors.tickets}
                     >
                     </TextField>
+                    
+                    <TextField 
+                      variant='filled'
+                      label='Image Source'
+                      name='imgUrl'
+                      value = {values.imgUrl}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={!!touched.imgUrl && !!errors.imgUrl}
+                      helperText={!!touched.imgUrl && errors.imgUrl}
+                    >
+                    </TextField>
 
                     <TextField 
                       variant='filled'
@@ -104,14 +127,27 @@ export default function CreateUser({type}) {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       error={!!touched.password && !!errors.password}
-                      helperText={!!touched.password && !!errors.password}
+                      helperText={!!touched.password && errors.password}
                     >
                     </TextField>
-                    <SubmitButton>Create user</SubmitButton>
-                  </Form>
+                    <TextField 
+                      variant='filled'
+                      label='status'
+                      name='status'
+                      value = {values.status}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      error={!!touched.status && !!errors.status}
+                      helperText={!!touched.status && errors.status}
+                    >
+                    </TextField>
+
+                    <Button type='submit' onClick={()=>console.log('sub')}>Create user</Button>
+                  </form>
                 )
               }
               </Formik>
+            </ComponentContainer>
     </Container>
   )
 }

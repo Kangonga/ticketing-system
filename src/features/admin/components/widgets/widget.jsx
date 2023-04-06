@@ -1,9 +1,15 @@
 import { EngineeringOutlined, Groups2Outlined, SupportAgentOutlined } from "@mui/icons-material";
 import {  IconButton, Typography } from "@mui/material";
+import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { Container, WidgetFooter } from "./styles";
+import { fetchAgents, fetchDevelopers, fetchTickets } from '../../../../data/fetchData'
 
 export default function Widget({ type }){
+    const devNumber = useQuery(["fetchDevNum"], fetchDevelopers, {networkMode:'offlineFirst'})
+    const agentNumber = useQuery(["fetchAgentNum"], fetchAgents, {networkMode:'offlineFirst'})
+    const ticketNumber = useQuery(["fetchTicketNum"], fetchTickets, {networkMode:'offlineFirst'})
+
     let data = {}
     const navigate = useNavigate()
 
@@ -11,7 +17,7 @@ export default function Widget({ type }){
         case "devs":
             data = {
                 title: 'Developers',
-                body:'100',
+                body:devNumber.isFetched?devNumber.data.length:'loading',
                 linkText: 'See all developers',
                 icon: <EngineeringOutlined />,
                 route: 'devs',
@@ -21,7 +27,7 @@ export default function Widget({ type }){
         case "agents":
             data = {
                 title: 'Agents',
-                body:'100',
+                body:agentNumber.isFetched?agentNumber.data.length:'loading',
                 linkText: 'See all agents',
                 icon: <SupportAgentOutlined />,
                 route: 'agents',
@@ -31,7 +37,7 @@ export default function Widget({ type }){
         case "customers":
             data = {
                 title: 'Customers',
-                body:'100',
+                body:devNumber.isFetched?devNumber.data.length:'loading',
                 linkText: 'See all customers',
                 icon: <Groups2Outlined />,
                 route: 'customers',
@@ -42,7 +48,7 @@ export default function Widget({ type }){
         case "tickets":
             data = {
                 title: 'Tickets',
-                body:'100',
+                body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
                 linkText: 'See all tickets',
                 icon: <Groups2Outlined />,
                 route: 'tickets',

@@ -56,12 +56,12 @@ export const agentColumns = [
 
 export const ticketColumns = [
     { field: 'id', headerName: 'ID', width: 170 },
-    { field: 'title', headerName: 'title', width: 200 },
+    { field: 'title', headerName: 'title', width: 150 },
     { field: 'agent', headerName: 'Reported by', width: 130 },
-    { field: 'status', headerName: 'Status', width: 130 },
+    { field: 'status', headerName: 'Status', width: 100 },
     { field: 'developer', headerName: 'Assignee', width: 130},
-    { field: 'source', headerName: 'Source', width: 130 },
-    { field: 'priority', headerName: 'Priority', width: 130 },
+    { field: 'source', headerName: 'Source', width: 100 },
+    { field: 'priority', headerName: 'Priority', width: 100 },
 ];
 
 export const closedTicketColumns = [

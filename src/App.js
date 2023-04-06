@@ -9,12 +9,18 @@ import SingleView from "./features/admin/pages/userSingleView/SingleView";
 import DataTable from "./features/admin/components/datagrid/DataGrid";
 import AgentDataTable from "./features/agents/datagrid/DataGrid";
 import TicketsDataTable from "./features/tickets/datagrid/DataGrid";
-import Sidebar from './shared/components/sidebar/Sidebar'
-import Topbar from "./shared/components/topbar/Topbar";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Login from "./shared/pages/login/Login"
+import CreateTicket from "./shared/pages/createTickets/CreateTicket";
+import TicketChat from "./shared/pages/ticketChat/TicketChat";
+import Profile from "./shared/pages/profilePage/Profile";
+
+import { useSelector } from "react-redux";
 
 const queryClient = new QueryClient({})
 export default function App(){
+    useSelector((store)=>console.log(store.user))
+
     const [ mode, useMode ] = useState('light')
     const [ user, setUser ] = useState('admin')
     return(
@@ -24,15 +30,12 @@ export default function App(){
                 <UserContext.Provider value={{ user, setUser }}>
                     <ThemeContext.Provider value={{ mode,useMode }}>
                         <CssBaseline />
-                        <Box display='flex' justifyContent='flex-start'>
-                            <Sidebar></Sidebar>
-                        <Box display='flex' flexDirection='column' flex={2} >
-                            <Topbar></Topbar>
                             <Box>
                             <Routes>
-                                <Route path="/admin">
+                                <Route path="admin">
                                     <Route index element={<AdminDashboard />}/>
-                                    {/* <Route path="login" element={<Login />} /> */}
+                                    <Route path="login" element={<Login user={'admin'}/>} />
+                                    <Route path="profile" element={<Profile user={'admin'}/>} />
                                     <Route path="devs">
                                         <Route index element={<DataTable />} />
                                         <Route path=":devId" element={<SingleView />} />
@@ -40,8 +43,8 @@ export default function App(){
                                     </Route>
                                     <Route path="tickets">
                                         <Route index element={<TicketsDataTable/>} />
-                                        {/* <Route path=":ticketId" element={<TicketChat />} /> */}
-                                        {/* <Route path="new" element={<NewItem />} /> */}
+                                        <Route path=":ticketId" element={<TicketChat />} />
+                                        <Route path="new" element={<CreateTicket />} />
                                     </Route>
                                     <Route path="agents">
                                         <Route index element={<AgentDataTable data={'agents'}/>} />
@@ -51,10 +54,11 @@ export default function App(){
                                 </Route>
 
                                 {/* <Route path="/dev">
-                                    <Route index element={<List />} />
-                                    <Route path=":devId" element={<ListItem />} />
-                                    <Route path="new" element={<NewItem />} />
-                                    <Route path="me" element={<NewItem />} />
+                                        <Route index element={<List />} />
+                                        <Route path="login" element={<Login user={'developer'}/>} />
+                                        <Route path=":devId" element={<ListItem />} />
+                                        <Route path="new" element={<NewItem />} />
+                                        <Route path="me" element={<NewItem />} />
                                     <Route path="login" element={<Login />} />
                                 </Route>
 
@@ -66,6 +70,7 @@ export default function App(){
                                 
                                 <Route path="/agent">
                                     <Route index element={<List />} />
+                                    <Route path="login" element={<Login user={'agent'}/>} />
                                     <Route path=":agentId" element={<ListItem />} />
                                     <Route path="new" element={<NewItem />} />
                                     <Route path="me" element={<NewItem />} />
@@ -73,8 +78,6 @@ export default function App(){
                                 </Route> */}
                             </Routes>
                             </Box>
-                        </Box>
-                        </Box>
                     </ThemeContext.Provider>
                 </UserContext.Provider>
                 </QueryClientProvider>

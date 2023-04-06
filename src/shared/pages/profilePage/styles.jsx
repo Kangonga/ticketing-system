@@ -1,4 +1,14 @@
 import { styled } from "@mui/material";
+export const Cont = styled('div')(({ theme })=>({
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        paddingTop: theme.spacing(4),
+        paddingBottom: theme.spacing(4),
+}))
+
+
+
 
 export const ComponentContainer = styled('div')(({ theme })=>({
     flex:2,

@@ -41,7 +41,7 @@ export const icons = {
       {
         name:'Profile',
         icon:<PersonOutlined />,
-        route:'/admin/me'
+        route:'/admin/profile'
       },
       {
         name:'Log Out',

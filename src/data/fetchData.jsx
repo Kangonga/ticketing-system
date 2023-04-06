@@ -13,3 +13,8 @@ export const fetchTickets = async()=> {
     const data = await res.json()
     return data
 }
+export const fetchChats = async()=> {
+    const res = await fetch('http://localhost:5000/chats')
+    const data = await res.json()
+    return data
+}
