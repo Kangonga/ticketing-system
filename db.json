@@ -1,0 +1,70 @@
+{
+  "admin": [
+    {
+      "id": "admin2023ZK97",
+      "firstName": "admin",
+      "secondName": "one"
+    }
+  ],
+  "developers": [
+    {
+      "id": "dev2023ZK97",
+      "firstName": "john",
+      "lastName": "doe",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "jdoe@mail.com",
+      "password": "12345",
+      "status": "offline"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "ticket2023OZ93",
+      "title": "put error",
+      "description": "put requests delete data",
+      "agent": "admin",
+      "developer": "null",
+      "source": "whatsapp",
+      "priority": "medium",
+      "status": "open",
+      "createdAt": "2023/4/6/4:12",
+      "closedAt": "null"
+    },
+    {
+      "id": "ticket2023YA83",
+      "title": "bad ui",
+      "description": "The website UI is not consistent and is dull",
+      "agent": "admin",
+      "developer": "null",
+      "source": "whatsapp",
+      "priority": "medium",
+      "status": "open",
+      "createdAt": "2023/4/6/4:26",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "BDHGRTRTE"
+        }
+      ]
+    }
+  ],
+  "agents": [],
+  "chats": [
+    {
+      "id": "chat2023TW45",
+      "ticketID": "ticket2023TW45",
+      "createdAt": "2023/4/5/21:58",
+      "messages": [
+        {
+          "id": "message2023TW45",
+          "senderID": "",
+          "senderName": "admin2023ZK97",
+          "data": "created this as a test to see that the chats page works"
+        }
+      ]
+    }
+  ]
+}
