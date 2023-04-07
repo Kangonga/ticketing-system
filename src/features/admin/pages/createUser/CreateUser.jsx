@@ -7,7 +7,7 @@ import { IdGenerator } from 'custom-random-id'
 import { Container } from '../../../../shared/styles/styles'
 import Sidebar from '../../../../shared/components/sidebar/Sidebar'
 import Topbar from '../../../../shared/components/topbar/Topbar'
-import { postDeveloper } from '../../../../data/postData'
+import { postAgents, postDeveloper } from '../../../../data/postData'
 
 export default function CreateUser({type}) {
   const date = new Date()
@@ -32,7 +32,8 @@ export default function CreateUser({type}) {
         status:yup.string().required('default status is required')
     })
     const handleSubmit = (values)=>{
-      postDeveloper(values)
+      if (type==='developer')postDeveloper(values)
+      if (type==='agent')postAgents(values)
     }
   return (
     <Container>
