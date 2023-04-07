@@ -16,21 +16,29 @@
       "email": "jdoe@mail.com",
       "password": "12345",
       "status": "offline"
+    },
+    {
+      "id": "agent2023WX68",
+      "firstName": "j",
+      "lastName": "s",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "kev5@gmail.com",
+      "password": "12345",
+      "status": "offline"
+    },
+    {
+      "id": "agent2023EQ39",
+      "firstName": "agent one",
+      "lastName": "s",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "kev5@gmail.com",
+      "password": "12345",
+      "status": "offline"
     }
   ],
   "tickets": [
-    {
-      "id": "ticket2023OZ93",
-      "title": "put error",
-      "description": "put requests delete data",
-      "agent": "admin",
-      "developer": "null",
-      "source": "whatsapp",
-      "priority": "medium",
-      "status": "open",
-      "createdAt": "2023/4/6/4:12",
-      "closedAt": "null"
-    },
     {
       "id": "ticket2023YA83",
       "title": "bad ui",
@@ -47,11 +55,138 @@
           "senderId": "admin",
           "senderName": "admin",
           "data": "BDHGRTRTE"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "must add the following features\n=> mark ticket as closed\n=> delete ticket\n=> reopen ticket"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "must add the following UI styles\n=> message width\n=> chats container gap between messages\n=> Use theme to display either on the left or right. By passing the desired positioning as props to the styled component "
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Stretch Goals\n=> Use a rich text editor in place of the current text area"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023IY58",
+      "title": "cannot create agent accounts",
+      "description": "Can't create agent accounts. additionally the form data does not reset on submit",
+      "agent": "null",
+      "developer": "null",
+      "source": "other",
+      "priority": "medium",
+      "status": "open",
+      "createdAt": "2023/4/6/7:42",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023RY63",
+      "title": "ui",
+      "description": "The project UI is not yet created. Thus the site is not user friendly",
+      "agent": "null",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/6/7:49",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023HY51",
+      "title": "Creating Dev and Agent facing accounts",
+      "description": "Currently the site only has admin facing functionality. Create developer and client facing functionality",
+      "agent": "null",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/6/7:50",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023EG71",
+      "title": "Connect to backend",
+      "description": "The site currently uses json server for data storage. I have not created a connection to the backend yet",
+      "agent": "null",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/6/7:53",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023XD71",
+      "title": "global user state",
+      "description": "Currently the user role is not dynamically set but hardcoded. Use Context to provide a global user context",
+      "agent": "null",
+      "developer": "null",
+      "source": "other",
+      "priority": "medium",
+      "status": "open",
+      "createdAt": "2023/4/6/7:59",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "empty object returned"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "check if ticket text area is reset after a submission\n"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "check if ticket text area is reset after a submission2"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "check if ticket text area is reset after a submission3"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "setIsTicketUpdated(true)"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "check if ticket text area is reset after a submission4"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "check if ticket text area is reset after a submission5"
         }
       ]
     }
   ],
-  "agents": [],
+  "agents": [
+    {
+      "id": "agent2023DM11",
+      "firstName": "agent one",
+      "lastName": "s",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "kev5@gmail.com",
+      "password": "12345",
+      "status": "offline"
+    }
+  ],
   "chats": [
     {
       "id": "chat2023TW45",
