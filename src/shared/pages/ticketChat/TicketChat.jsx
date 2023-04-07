@@ -1,13 +1,13 @@
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { IdGenerator } from 'custom-random-id'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import {  postTicket, postTickets } from '../../../data/postData'
+import {  patchTicket } from '../../../data/patchData'
 import Sidebar from '../../components/sidebar/Sidebar'
 import Topbar from '../../components/topbar/Topbar'
 import { Container } from '../../styles/styles'
-import { ChatContainer, Chats, ComponentContainer, CreateMessageBox, MessageCard } from './styles'
+import { ChatContainer, ChatIntro, ChatMessages, ComponentContainer, CreateMessageBox, MessageCard } from './styles'
 import { fetchTickets } from '../../../data/fetchData'
 
 export default function TicketChat() {
@@ -19,12 +19,15 @@ const [message, setMessage] = useState({
     senderName:'admin',
     data:''
 })
+function handleClose(){
+
+}
 const {data} = useQuery(["fetchtickets",isTicketUpdated], fetchTickets, {networkMode:'offlineFirst'})
 const ticket = data?.filter(ticket=>ticket.id===ticketId)[0]
 function handleSubmit(){
     const updated = {...ticket, messages:[...ticket.messages,message]}
     console.log(updated)
-    postTicket(updated, ticketId).then(setIsTicketUpdated(!isTicketUpdated))
+    patchTicket(updated, ticketId).then(setIsTicketUpdated(!isTicketUpdated))
     setMessage({
         senderId:'admin',
         senderName:'admin',
@@ -38,13 +41,18 @@ function handleSubmit(){
         <ComponentContainer>
             <Topbar />
             <ChatContainer>
-                <h3>Ticket id: {ticket?.id}</h3>
-                <h3>Title: {ticket?.title}</h3>
+            <Typography>Title: {ticket?.title}</Typography>
+                <ChatIntro>
+                    <Typography>Ticket id: {ticket?.id}</Typography>
+                    <Button onClick={handleClose} sx={{backgroundColor:'coral', width:'max-content'}}>
+                        Close ticket
+                    </Button>
+                </ChatIntro>
                 <div><b>Description:</b> <MessageCard>
-                        {ticket?.description}
-                    </MessageCard></div>
-                <Chats>
-                    <h4>Ticket chat messages</h4>
+                            {ticket?.description}
+                        </MessageCard></div>
+                        <h4>Ticket chat messages</h4>
+                <ChatMessages>   
                     {ticket?.messages?.map((message,index)=>{
                         return <MessageCard key={index}>
                             {message.data}
@@ -52,7 +60,8 @@ function handleSubmit(){
                             sent by:{message.senderName}
                         </MessageCard>
                     })}
-                </Chats>
+                </ChatMessages>
+                <Typography>Create new message</Typography>
                 <CreateMessageBox placeholder='TYPE TICKET RELATED MESSAGE HERE' value={message.data} onChange={(e)=>setMessage({...message, data:e.target.value})}>
                 </CreateMessageBox>
                 <Button onClick={handleSubmit}sx={{bgcolor:'coral', width:'max-content', padding:'.5rem 1rem'}}>Submit</Button>
