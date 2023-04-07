@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../../../../shared/components/sidebar/Sidebar'
-import { Container } from '../../../../shared/components/topbar/styles'
+import { Container } from '../../../../shared/styles/styles'
 import Topbar from '../../../../shared/components/topbar/Topbar'
 import ClosedTicketsCard from '../../components/closedTicketsCard/ClosedTicketsCard'
 import TicketSourcesChart from '../../components/ticketSourcesChart/TicketSourcesChart'
