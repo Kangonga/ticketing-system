@@ -13,20 +13,23 @@ import { fetchTickets } from '../../../data/fetchData'
 export default function TicketChat() {
 const params = useParams()
 const ticketId = params.ticketId
-const [updateTicket, setUpdateTicket] = useState([])
+const [isTicketUpdated, setIsTicketUpdated] = useState(false)
 const [message, setMessage] = useState({
     senderId:'admin',
     senderName:'admin',
     data:''
 })
-const {data} = useQuery(["fetchtickets"], fetchTickets, {networkMode:'offlineFirst'})
+const {data} = useQuery(["fetchtickets",isTicketUpdated], fetchTickets, {networkMode:'offlineFirst'})
 const ticket = data?.filter(ticket=>ticket.id===ticketId)[0]
 function handleSubmit(){
-    setUpdateTicket({
-        ...ticket[0],
-        messages: [...ticket[0].messages, message]
+    const updated = {...ticket, messages:[...ticket.messages,message]}
+    console.log(updated)
+    postTicket(updated, ticketId).then(setIsTicketUpdated(!isTicketUpdated))
+    setMessage({
+        senderId:'admin',
+        senderName:'admin',
+        data:''
     })
-    postTicket(updateTicket[0], ticketId)
 }
 
   return (
@@ -37,12 +40,14 @@ function handleSubmit(){
             <ChatContainer>
                 <h3>Ticket id: {ticket?.id}</h3>
                 <h3>Title: {ticket?.title}</h3>
+                <div><b>Description:</b> <MessageCard>
+                        {ticket?.description}
+                    </MessageCard></div>
                 <Chats>
-                    {console.log(ticket)}
+                    <h4>Ticket chat messages</h4>
                     {ticket?.messages?.map((message,index)=>{
                         return <MessageCard key={index}>
                             {message.data}
-                            {console.log(message)}
                             <br />
                             sent by:{message.senderName}
                         </MessageCard>
