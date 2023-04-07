@@ -19,7 +19,6 @@ import { useSelector } from "react-redux";
 
 const queryClient = new QueryClient({})
 export default function App(){
-    useSelector((store)=>console.log(store.user))
 
     const [ mode, useMode ] = useState('light')
     const [ user, setUser ] = useState('admin')
