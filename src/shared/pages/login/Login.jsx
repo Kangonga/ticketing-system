@@ -2,7 +2,7 @@ import * as yup from 'yup'
 import { Container, SmallText } from './styles'
 import { Formik } from 'formik'
 import { useState } from 'react'
-import {  TextField , InputAdornment, IconButton, Typography } from '@mui/material'
+import {  TextField , InputAdornment, IconButton, Typography, Button } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 
 export default function AdminLogin() {
@@ -61,7 +61,7 @@ export default function AdminLogin() {
                       }}
                     >
                     </TextField>
-                    <button className='submit' type='submit'>Submit</button>
+                    <Button sx={{ width:'max-content', padding:'0.5rem 1rem',backgroundColor:'coral',margin:'auto'}} type='submit'>Submit</Button>
             </form>
         )}
       </Formik>
