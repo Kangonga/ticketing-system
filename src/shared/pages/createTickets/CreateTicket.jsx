@@ -52,7 +52,7 @@ export default function CreateTicket({ user }) {
             <TicketContainer>
                 <Formik
                     onSubmit={async (values, { resetForm })=>{
-                        await handleSubmit(values)
+                        handleSubmit(values)
                         resetForm()
                     }}
                     initialValues={initialValues}
