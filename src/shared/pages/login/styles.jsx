@@ -20,8 +20,7 @@ export const Container = styled('div')(({ theme })=>({
     '& .submit':{
         width:'max-content',
         padding:'0.5rem 1rem',
-        backgroundColor:'white',
-        border:'1px solid black',
+        backgroundColor:'coral',
         borderRadius:'10px',
         margin:'auto',
         cursor:'pointer'
