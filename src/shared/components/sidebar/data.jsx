@@ -46,7 +46,7 @@ export const icons = {
       {
         name:'Log Out',
         icon:<LogoutOutlined />,
-        route:'/admin/'
+        route:'/admin/login'
       }
     ],
   }
