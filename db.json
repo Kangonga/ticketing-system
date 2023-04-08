@@ -18,24 +18,48 @@
       "status": "offline"
     },
     {
-      "id": "agent2023WX68",
-      "firstName": "j",
-      "lastName": "s",
+      "id": "dev2023MJ48",
+      "firstName": "hane",
+      "lastName": "doe",
       "tickets": "0",
       "imgUrl": "",
-      "email": "kev5@gmail.com",
+      "email": "mail@mail.com",
       "password": "12345",
-      "status": "offline"
+      "status": "offline",
+      "role": "developer"
     },
     {
-      "id": "agent2023EQ39",
-      "firstName": "agent one",
-      "lastName": "s",
+      "id": "dev2023FB98",
+      "firstName": "john",
+      "lastName": "doe",
       "tickets": "0",
       "imgUrl": "",
-      "email": "kev5@gmail.com",
+      "email": "mail@mail.com",
       "password": "12345",
-      "status": "offline"
+      "status": "offline",
+      "role": "developer"
+    },
+    {
+      "id": "dev2023ZF52",
+      "firstName": "ayra",
+      "lastName": "starl",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "developer"
+    },
+    {
+      "id": "dev2023IK72",
+      "firstName": "ayra",
+      "lastName": "doe",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "developer"
     }
   ],
   "tickets": [
@@ -74,6 +98,18 @@
           "senderName": "admin",
           "data": "Step four: Protected routes: The routes should all be protected such that they cannot be navigated to without an active user. Always redirect to login page in such cases.",
           "time": "6:25"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "All four steps done",
+          "time": "19:14"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Bugs Encountered:\n\n=> How to set user data in local storage, and navigate away if that is not the case.\nSolved with the following code:\n\nuseEffect(()=>{\n   if(uData && uData.role==='admin') setUser({...user, name:uData.name, role:uData.role});\n   else navigate('/admin/login')\n},[])",
+          "time": "19:16"
         }
       ]
     },
