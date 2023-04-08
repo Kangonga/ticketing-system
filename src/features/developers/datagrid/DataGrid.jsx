@@ -1,18 +1,22 @@
-import { Typography } from '@mui/material'
-import { agentRows, userRows } from './data/rows';
-import { agentColumns, devColumns, ticketColumns, userColumns } from './data/columns';
+import { Button, Typography } from '@mui/material'
+import {  devColumns } from './data/columns';
 import { DataGrid, GridToolbar } from '@mui/x-data-grid';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Actions, ComponentContainer } from './styles';
-import { Container } from '../../../shared/styles/styles'
-import  Sidebar  from '../../../shared/components/sidebar/Sidebar'
-import  Topbar  from '../../../shared/components/topbar/Topbar'
+import { useQuery } from '@tanstack/react-query';
+import { fetchDevelopers } from '../../../data/fetchData'
+import { Container } from '../../../shared/styles/styles';
+import Sidebar from '../../../shared/components/sidebar/Sidebar';
+import Topbar from '../../../shared/components/topbar/Topbar';
+import { useContext } from 'react';
+import { UserContext } from '../../../context/UserContext';
 
-export default function DataTable({ type, status}) {
+export default function DataTable() {
+  const {user} = useContext(UserContext)
   const navigate = useNavigate()
-  const path = useLocation().pathname.split('/')
-  const location = path[path.length-1]
-
+  const { isLoading, isError, data, error } = useQuery(["fetchDevs"],fetchDevelopers, {networkMode:'offlineFirst'})
+  if(isLoading)return "Loading";
+  if(isError) console.log(error)
   const handleView = ( e, params )=>{
     e.preventDefault()
     navigate(`./${params.row.id}`)
@@ -20,27 +24,7 @@ export default function DataTable({ type, status}) {
 
   const handleDelete = (e)=>{
     e.preventDefault()
-    console.log(e.target.innerHTML)
   }
-  let dataColumns = []
-  let dataRows = []
-  switch(location){
-        case 'devs':{
-            dataColumns = devColumns
-            dataRows = userRows
-        break;
-        }
-        case 'agents':{
-            dataColumns = agentColumns
-            dataRows = agentRows
-        break;
-        }
-        case 'tickets':{
-            dataColumns = ticketColumns
-        break;
-        }
-        default:break
-}
 
   const actions = [{
     field:"action",
@@ -57,24 +41,25 @@ export default function DataTable({ type, status}) {
   }]
   return (
     <Container>
-      <Sidebar></Sidebar>
-    <ComponentContainer>
-      <Topbar></Topbar>
-        <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { location }</Typography>
+      <Sidebar/>
+      <ComponentContainer>
+        <Topbar></Topbar>
+      <Typography fontSize='1.2rem' color='gray' textAlign='center' paddingTop='1rem'> { 'devs' }</Typography>
         <DataGrid
-            rows={dataRows}
+            rows={data}
             pageSize={2}
             initialState={{
-            pagination:{paginationModel:{pageSize:10}}
+            pagination:{ paginationModel:{ pageSize:10 }}
             }}
-            columns={dataColumns.concat(actions)}
+            columns={devColumns.concat(actions)}
             pageSizeOptions={[5,10,15]}
             checkboxSelection
             slots={{
             toolbar: GridToolbar,
             }}
         />
-    </ComponentContainer>
+        <Button onClick={()=>navigate('new')} sx={{width:'max-content',color:'black', padding:'.5rem 1rem', margin:'auto', backgroundColor:'coral'}}>Create new Developer account</Button>
+      </ComponentContainer>
     </Container>
   );
 }

@@ -1,8 +1,13 @@
 import { styled } from "@mui/material";
 
-export const ComponentContainer = styled('div')(({ theme })=> ({
+export const ComponentContainer = styled('div')(({ theme }) => ({
     flex:2,
-    height: '95vh',
+    display: 'flex',
+    flexDirection:'column',
+    backgroundColor:'#fcfcfc',
+    height:'max-content',
+    padding:'0 1rem',
+    height: '85vh',
     overflow:'auto',
 
     '.MuiDataGrid-root':{
@@ -17,7 +22,6 @@ export const ComponentContainer = styled('div')(({ theme })=> ({
         margin:'auto',
     }
 }))
-
 
 
 export const Actions = styled('div')(({ theme })=> ({
