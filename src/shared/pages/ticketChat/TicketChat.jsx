@@ -15,18 +15,21 @@ const date = new Date()
 const params = useParams()
 const ticketId = params.ticketId
 const [isTicketUpdated, setIsTicketUpdated] = useState(false)
+const [isTicketOpen, setIsTicketOpen] = useState(true)
 const [message, setMessage] = useState({
     senderId:'admin',
     senderName:'admin',
     data:'',
     time:''
 })
-function handleClose(){
-
+function handleCloseTicket(){
+    const updated = {...ticket, status:isTicketOpen?'closed':'open'}
+    patchTicket(updated, ticketId).then(data=>console.log(data))
+    setIsTicketOpen(!isTicketOpen)
 }
 const {data} = useQuery(["fetchtickets",isTicketUpdated], fetchTickets, {networkMode:'offlineFirst'})
 const ticket = data?.filter(ticket=>ticket.id===ticketId)[0]
-function handleSubmit(){
+function handleSubmitMessage(){
     const updated = {...ticket, messages:[...ticket.messages,message]}
     patchTicket(updated, ticketId).then(setIsTicketUpdated(!isTicketUpdated))
     setMessage({
@@ -46,8 +49,8 @@ function handleSubmit(){
             <Typography>Title: {ticket?.title}</Typography>
                 <ChatIntro>
                     <Typography>Ticket id: {ticket?.id}</Typography>
-                    <Button onClick={handleClose} sx={{backgroundColor:'coral', width:'max-content'}}>
-                        Close ticket
+                    <Button onClick={handleCloseTicket} sx={{backgroundColor:'coral', width:'max-content'}}>
+                        {isTicketOpen?'close':'open'} ticket
                     </Button>
                 </ChatIntro>
                 <div><b>Description:</b> <MessageCard>
@@ -73,7 +76,7 @@ function handleSubmit(){
                     time:`${date.getHours()}:${date.getMinutes()<10?`0${date.getMinutes()}`:date.getMinutes()}`
                 })}}> 
                 </CreateMessageBox>
-                <Button onClick={handleSubmit}sx={{bgcolor:'coral', width:'max-content', padding:'.5rem 1rem'}}>Submit</Button>
+                <Button onClick={handleSubmitMessage}sx={{bgcolor:'coral', width:'max-content', padding:'.5rem 1rem'}}>Submit</Button>
             </ChatContainer>
         </ComponentContainer>
     </Container>
