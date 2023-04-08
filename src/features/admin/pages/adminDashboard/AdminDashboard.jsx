@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Sidebar from '../../../../shared/components/sidebar/Sidebar'
 import { Container } from '../../../../shared/styles/styles'
 import Topbar from '../../../../shared/components/topbar/Topbar'
@@ -6,13 +6,19 @@ import ClosedTicketsCard from '../../components/closedTicketsCard/ClosedTicketsC
 import TicketSourcesChart from '../../components/ticketSourcesChart/TicketSourcesChart'
 import Widget from '../../components/widgets/widget'
 import { Charts,  ComponentContainer, Widgets } from './styles'
+import { Typography } from '@mui/material'
+import { UserContext } from '../../../../context/UserContext'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 export default function AdminDashboard() {
+  const {user} = useContext(UserContext)
+  
   return (
     <Container>
         <Sidebar />
         <ComponentContainer>
         <Topbar />
+        <Typography>Hello there, {user?.name}</Typography>
         <Widgets>
             <Widget type='devs'></Widget>
             <Widget type='agents'></Widget>
