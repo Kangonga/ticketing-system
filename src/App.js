@@ -3,25 +3,21 @@ import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
 import { UserContext } from "./context/UserContext";
-import AdminDashboard from "./features/admin/pages/adminDashboard/AdminDashboard";
-import CreateUser from "./features/admin/pages/createUser/CreateUser";
-import SingleView from "./features/admin/pages/userSingleView/SingleView";
-import DataTable from "./features/admin/components/datagrid/DataGrid";
-import AgentDataTable from "./features/agents/datagrid/DataGrid";
-import TicketsDataTable from "./features/tickets/datagrid/DataGrid";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./shared/pages/login/Login"
-import CreateTicket from "./shared/pages/createTickets/CreateTicket";
-import TicketChat from "./shared/pages/ticketChat/TicketChat";
-import Profile from "./shared/pages/profilePage/Profile";
 
-import { useSelector } from "react-redux";
+import RequireAdminAuth from "./auth/RequireAdminAuth";
+
 
 const queryClient = new QueryClient({})
 export default function App(){
 
     const [ mode, useMode ] = useState('light')
-    const [ user, setUser ] = useState('admin')
+    const [ user, setUser ] = useState({
+        name:'',
+        role:'',
+        userData:{}
+    })
     return(
         <>
             <BrowserRouter>
@@ -31,26 +27,9 @@ export default function App(){
                         <CssBaseline />
                             <Box>
                             <Routes>
-                                <Route path="admin">
-                                    <Route index element={<AdminDashboard />}/>
-                                    <Route path="login" element={<Login user={'admin'}/>} />
-                                    <Route path="profile" element={<Profile user={'admin'}/>} />
-                                    <Route path="devs">
-                                        <Route index element={<DataTable />} />
-                                        <Route path=":devId" element={<SingleView />} />
-                                        <Route path="new" element={<CreateUser type={'developer'} />} />
-                                    </Route>
-                                    <Route path="tickets">
-                                        <Route index element={<TicketsDataTable/>} />
-                                        <Route path=":ticketId" element={<TicketChat />} />
-                                        <Route path="new" element={<CreateTicket />} />
-                                    </Route>
-                                    <Route path="agents">
-                                        <Route index element={<AgentDataTable data={'agents'}/>} />
-                                        <Route path=":agentId" element={<SingleView />} />
-                                        <Route path="new" element={<CreateUser type={'agent'}/>} />
-                                    </Route>
-                                </Route>
+                            <Route path="/" element={<Login />} />
+                            <Route path="/admin/login" element={<Login />} />
+                            <Route path="admin/*" element={<RequireAdminAuth />} />
 
                                 {/* <Route path="/dev">
                                         <Route index element={<List />} />
