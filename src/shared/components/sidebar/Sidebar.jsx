@@ -10,6 +10,9 @@ export default function Sidebar() {
   let location = useLocation()
   location = location.pathname.split('/')[1]
   const [openDrawer, setOpenDrawer] = useState(false)
+  const handleLogout = ()=>{
+    localStorage.removeItem("user")
+  }
   return (
     <Box value={[openDrawer,setOpenDrawer]} >
       <CssBaseline />
@@ -33,7 +36,9 @@ export default function Sidebar() {
           {Object.keys(icons).map((iconGroup) => (
           <List key={iconGroup}>
             {icons[iconGroup].map((icon,index)=>(
-              <ListItem disablePadding sx={{ display: 'block' }} key={index} onClick={()=>navigate(`${icon.route}`)}>
+              <ListItem disablePadding sx={{ display: 'block' }} key={index}
+               onClick={()=>{navigate(`${icon.route}`); if (icon.name==='Log Out')handleLogout()}}
+               >
               <ListItemButton
                 sx={{
                   minHeight: 48,
