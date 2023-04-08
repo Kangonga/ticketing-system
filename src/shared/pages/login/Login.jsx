@@ -1,40 +1,45 @@
 import * as yup from 'yup'
 import { Container, SmallText } from './styles'
 import { Formik } from 'formik'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {  TextField , InputAdornment, IconButton, Typography, Button } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
+import { useNavigate } from 'react-router-dom'
+import { UserContext } from '../../../context/UserContext'
 
 export default function AdminLogin() {
   const [showPassword,setShowPassword] = useState(false)
-
-  const initialData = {
+  const {user,setUser} = useContext(UserContext)
+  const navigate = useNavigate()
+  const [initialData, setInitialData] = useState({
     email:"",
     password:""
-  }
+  })
   const schema = yup.object().shape({
     email: yup.string().email().required('please input your email'),
     password: yup.string().required('please input your password')
   })
   const handleSubmit = (data)=>{
-    console.log(data)
+    const updated = {...user, name:'admin', role:'admin'}
+    localStorage.setItem("user",JSON.stringify(updated)) 
+    navigate('/admin')
   }
   return (
     <Container>
       <Formik
-        onSubmit={handleSubmit}
+         validationSchema={schema}
+        onSubmit={(values, {resetForm})=>{handleSubmit(values);resetForm()}}
         initialValues={initialData}
-        validationSchema={schema}
       >
         {
-        ({ values, errors, touched, handleChange, handleBlur, handleSubmit})=>(
+        ({ errors, touched, handleBlur, handleSubmit})=>(
             <form onSubmit={handleSubmit}>
                 <TextField 
                       variant='outlined'
                       label='Email'
                       name='email'
-                      value = {values.email}
-                      onChange={handleChange}
+                      value = {initialData.email}
+                      onChange={(e)=>setInitialData({...initialData, email:`${e.target.value}`})}
                       onBlur={handleBlur}
                       error={!!touched.email && !!errors.email}
                       helperText={!!touched.email && errors.email}
@@ -46,8 +51,8 @@ export default function AdminLogin() {
                       variant='outlined'
                       label='Password'
                       name='password'
-                      value = {values.password}
-                      onChange={handleChange}
+                      value = {initialData.password}
+                      onChange={(e)=>setInitialData({...initialData, password:`${e.target.value}`})}
                       onBlur={handleBlur}
                       error={!!touched.password && !!errors.password}
                       helperText={!!touched && errors.password}
