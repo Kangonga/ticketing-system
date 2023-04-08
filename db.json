@@ -50,7 +50,32 @@
       "status": "open",
       "createdAt": "2023/4/7/21:28",
       "closedAt": "null",
-      "messages": []
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Step one: Create user context that is accessible throughout the app. check in several nested pages that the current user is accessible",
+          "time": "6:21"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "step two: Set default page to login page. Upon successful login, redirect to dashboard and set the global user context",
+          "time": "6:23"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Step three: Upon login, store the current user in the local storage. Upon log out delete this entry",
+          "time": "6:23"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Step four: Protected routes: The routes should all be protected such that they cannot be navigated to without an active user. Always redirect to login page in such cases.",
+          "time": "6:25"
+        }
+      ]
     },
     {
       "id": "ticket2023OK84",
@@ -64,6 +89,111 @@
       "createdAt": "2023/4/7/21:48",
       "closedAt": "null",
       "messages": []
+    },
+    {
+      "id": "ticket2023YA33",
+      "title": "redux",
+      "description": "persist user state using redux. Stretch goal: store additional user data such as theme settings",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/4:13",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023CJ63",
+      "title": "Role specific features",
+      "description": "I should be able to access features based on my role. The dashboard, sidebar and routes available should be role specific. CRUD actions should also be role specific",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:29",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023CH78",
+      "title": "Developer actions",
+      "description": "As a developer I should be able to access developer specific features. From the dashboard, sidebar to crud actions. I should also have data fetched specific to me.",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:29",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023FY16",
+      "title": "Agent actions",
+      "description": "As an agent I should be able to access agent specific features. I should also have data fetched specific to me",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:32",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023DR14",
+      "title": "Admin actions",
+      "description": "As an admin I should be able to access admin specific features and CRUD actions. I should also have data fetched specific to me.",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:48",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023OF27",
+      "title": "UI theme",
+      "description": "As a user I should be able to choose between dark and light theme ",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/8/6:07",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023VP31",
+      "title": "UI",
+      "description": "As a user I should find the UI appeasing, uniform and clean. From the buttons, data tables, to pages",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/8/6:16",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023PA65",
+      "title": "Utilities page",
+      "description": "As an admin I should have a utilities page that aggregates various data from the web app and displays it in form of charts. From the most active sources, agents, devs, to average waiting times, online devs/agents etc",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/8/6:16",
+      "closedAt": "null",
+      "messages": []
     }
-  ]
+  ],
+  "agents": []
 }
