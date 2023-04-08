@@ -8,10 +8,11 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import { IdGenerator } from 'custom-random-id'
 import { postTickets } from '../../../data/postData'
+import { useState } from 'react'
 
 export default function CreateTicket({ user }) {
     const date = new Date()
-    const initialValues = {
+    const [initialValues, setInitialValues] = useState({
         id: new IdGenerator(`ticket${date.getFullYear()}{{ string_2 }}{{ number_2 }}`).getFinalExpression(),
         title:'',
         description:'',
@@ -20,10 +21,10 @@ export default function CreateTicket({ user }) {
         source:'',
         priority:'',
         status:'',
-        createdAt:`${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}/${date.getHours()}:${date.getMinutes()}`,
+        createdAt:`${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}/${date.getHours()}:${date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes()}`,
         closedAt:'',
         messages:[]
-    }
+    })
     const schema = yup.object().shape({
         id: yup.string(),
         title: yup.string().required('First name is required'),
@@ -37,10 +38,6 @@ export default function CreateTicket({ user }) {
         closedAt:yup.string().required(),
         messages:yup.array()
     })
-    const handleSubmit = (values)=>{
-        postTickets(values)
-        
-    }
   return (
     <Container>
         <Sidebar />
@@ -51,9 +48,15 @@ export default function CreateTicket({ user }) {
             </Typography>
             <TicketContainer>
                 <Formik
-                    onSubmit={async (values, { resetForm })=>{
-                        handleSubmit(values)
-                        resetForm()
+                    enableReinitialize
+                    onSubmit={(values, { resetForm,setSubmitting,setFieldValue })=>{
+                        postTickets(values)
+                        setInitialValues({
+                            ...initialValues,
+                            id: new IdGenerator(`ticket${date.getFullYear()}{{ string_2 }}{{ number_2 }}`).getFinalExpression(),
+                            createdAt: `${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}/${date.getHours()}:${date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes()}`
+                        })
+                        resetForm(initialValues)
                     }}
                     initialValues={initialValues}
                     validationSchema={schema}
@@ -74,7 +77,7 @@ export default function CreateTicket({ user }) {
                                     onBlur={handleBlur}
                                     error={!!touched[data] && !!errors[data]}
                                     >
-                                </TextField>
+                                </TextField> 
                                 })}
                                 <Button type='submit' sx={{width:'max-content', padding:'.5rem 1rem', margin:'auto', color:'black', backgroundColor:'coral'}}>
                                     Create ticket
