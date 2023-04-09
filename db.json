@@ -71,7 +71,7 @@
       "developer": "null",
       "source": "other",
       "priority": "high",
-      "status": "open",
+      "status": "closed",
       "createdAt": "2023/4/7/21:28",
       "closedAt": "null",
       "messages": [
@@ -124,7 +124,14 @@
       "status": "open",
       "createdAt": "2023/4/7/21:48",
       "closedAt": "null",
-      "messages": []
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Done\n",
+          "time": "6:46"
+        }
+      ]
     },
     {
       "id": "ticket2023YA33",
@@ -227,6 +234,95 @@
       "priority": "low",
       "status": "open",
       "createdAt": "2023/4/8/6:16",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023UB83",
+      "title": "TicketChat",
+      "description": "The ticket chat page has many features and functionalities. I am creating a ticket whereby I will add the individual issues as chats",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/9/6:47",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Add date in addition to time to the message object\n",
+          "time": "6:49"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023IC27",
+      "title": "Learning redux",
+      "description": "This is the process I will use to learn the remaining parts of redux",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "medium",
+      "status": "open",
+      "createdAt": "2023/4/9/9:03",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Each session will be 45 minutes long",
+          "time": "9:06"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Go through fundamentals, multiple reducers, immer, middleware",
+          "time": "9:10"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Async actions and Thunk.",
+          "time": "9:10"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Redux toolkit fundamentals. 17-21",
+          "time": "9:11"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Logger middleware, extra reducers, async thunks",
+          "time": "9:12"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: React-redux 25-30",
+          "time": "9:13"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "After every session, write what I have learnt here in the chat, with details on the Duration, important points etc",
+          "time": "9:14"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023OU45",
+      "title": "Create Ticket form",
+      "description": "Modify create ticket form to use drop downs for fields with limited input options. ",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/9/9:03",
       "closedAt": "null",
       "messages": []
     }
