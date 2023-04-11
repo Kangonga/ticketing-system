@@ -3,20 +3,12 @@
     {
       "id": "admin2023ZK97",
       "firstName": "admin",
-      "secondName": "one"
+      "secondName": "one",
+      "role":"admin"
     }
   ],
+  "agents": [],
   "developers": [
-    {
-      "id": "dev2023ZK97",
-      "firstName": "john",
-      "lastName": "doe",
-      "tickets": "0",
-      "imgUrl": "",
-      "email": "jdoe@mail.com",
-      "password": "12345",
-      "status": "offline"
-    },
     {
       "id": "dev2023MJ48",
       "firstName": "hane",
@@ -450,6 +442,5 @@
         }
       ]
     }
-  ],
-  "agents": []
+  ]
 }
