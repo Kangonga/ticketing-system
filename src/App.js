@@ -1,28 +1,20 @@
 import { Box, CssBaseline } from "@mui/material";
 import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import { ThemeContext } from "./context/ThemeContext";
-import { UserContext } from "./context/UserContext";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Login from "./shared/pages/login/Login"
 
-import RequireAdminAuth from "./auth/RequireAdminAuth";
+import RequireAdminAuth from "./authRoutes/RequireAdminAuth";
 
 
 const queryClient = new QueryClient({})
 export default function App(){
-
     const [ mode, useMode ] = useState('light')
-    const [ user, setUser ] = useState({
-        name:'',
-        role:'',
-        userData:{}
-    })
     return(
         <>
             <BrowserRouter>
             <QueryClientProvider client={queryClient}>
-                <UserContext.Provider value={{ user, setUser }}>
                     <ThemeContext.Provider value={{ mode,useMode }}>
                         <CssBaseline />
                             <Box>
@@ -57,7 +49,6 @@ export default function App(){
                             </Routes>
                             </Box>
                     </ThemeContext.Provider>
-                </UserContext.Provider>
                 </QueryClientProvider>
             </BrowserRouter>
         </>
