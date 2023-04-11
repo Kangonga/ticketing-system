@@ -9,16 +9,17 @@ import { Charts,  ComponentContainer, Widgets } from './styles'
 import { Typography } from '@mui/material'
 import { UserContext } from '../../../../context/UserContext'
 import { Navigate, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function AdminDashboard() {
-  const {user} = useContext(UserContext)
+  const userState = useSelector((state)=>state.auth.userInfo)
   
   return (
     <Container>
         <Sidebar />
         <ComponentContainer>
         <Topbar />
-        <Typography>Hello there, {user?.name}</Typography>
+        <Typography>Hello there, {userState?.firstName}</Typography>
         <Widgets>
             <Widget type='devs'></Widget>
             <Widget type='agents'></Widget>
