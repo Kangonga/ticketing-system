@@ -121,7 +121,7 @@
       "developer": "null",
       "source": "other",
       "priority": "high",
-      "status": "open",
+      "status": "closed",
       "createdAt": "2023/4/7/21:48",
       "closedAt": "null",
       "messages": [
@@ -144,7 +144,50 @@
       "status": "open",
       "createdAt": "2023/4/8/4:13",
       "closedAt": "null",
-      "messages": []
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Where to include redux",
+          "time": "9:23"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Currently working on the admin feature.",
+          "time": "9:25"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Handle the login status of the admin. Since there is no active backend at the moment, just query the admin endpoint, and use the received data to set the state of the current user. ",
+          "time": "9:56"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: When the user logs out, clear the state and reset to initial state",
+          "time": "9:57"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Check if the state of the user is accessible into the nested components/routes, and whether it can be mutated then",
+          "time": "9:58"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Protect routes depending on the role of the current user",
+          "time": "10:01"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: Use redux persist to persist the state across re-renders",
+          "time": "10:10"
+        }
+      ]
     },
     {
       "id": "ticket2023CJ63",
@@ -157,7 +200,38 @@
       "status": "open",
       "createdAt": "2023/4/8/5:29",
       "closedAt": "null",
-      "messages": []
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Using redux, I should be able to display only specific routes and features depending on the role of the logged in user",
+          "time": "10:12"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Developer\n\nDashboard features: online status, assigned tickets, closed tickets, all tickets, closed today, name\n\nSide bar features: Dashboard, tickets, log out, theme, my profile",
+          "time": "10:45"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Agent Dashboard features: online status, created tickets, create new ticket, ticket sources, name.\n\n  Sidebar features: dashboard, all tickets, my tickets, log out, theme, my profile",
+          "time": "10:47"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Developer ticket permissions: View, assign to self (if open), close, add ticket messages.",
+          "time": "10:49"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: Agent ticket permissions: View, create, add ticket messages\n\n",
+          "time": "10:55"
+        }
+      ]
     },
     {
       "id": "ticket2023CH78",
@@ -310,6 +384,12 @@
           "senderName": "admin",
           "data": "After every session, write what I have learnt here in the chat, with details on the Duration, important points etc",
           "time": "9:14"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Remaining part: async thunk review and react redux",
+          "time": "9:55"
         }
       ]
     },
@@ -325,6 +405,50 @@
       "createdAt": "2023/4/9/9:03",
       "closedAt": "null",
       "messages": []
+    },
+    {
+      "id": "ticket2023WI67",
+      "title": "Tickets feature",
+      "description": "This is where I will write all issues I plan on working on in regards to the functionality of the tickets",
+      "agent": "admin",
+      "developer": "null",
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/11/10:06",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: I must move the ticket chats and create ticket functionalities from the shared to the ticket feature. This is because the ticket is not self managing either way, and will always be shared by the admin, devs and agents",
+          "time": "10:08"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Add a date to the ticket chat messages, in addition to the current time",
+          "time": "10:09"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Add rich text functionality to the ticket chat and create ticket inputs",
+          "time": "10:21"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Add customer field when creating a ticket. This will identify customer details eg name, number, email etc\n\ncan also be an object that will store the above info",
+          "time": "10:54"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: Add date to the tickets data grid",
+          "time": "10:56"
+        }
+      ]
     }
   ],
   "agents": []
