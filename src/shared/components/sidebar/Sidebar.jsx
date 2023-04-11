@@ -4,14 +4,18 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { icons } from './data'
 import { Drawer, DrawerHeader } from './styles'
 import MenuIcon from '@mui/icons-material/Menu';
+import { useDispatch } from 'react-redux'
+import { authActions } from '../../../features/auth/authSlice'
 
 export default function Sidebar() {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   let location = useLocation()
   location = location.pathname.split('/')[1]
   const [openDrawer, setOpenDrawer] = useState(false)
   const handleLogout = ()=>{
-    localStorage.removeItem("user")
+    dispatch(authActions.logout())
+    navigate('/');
   }
   return (
     <Box value={[openDrawer,setOpenDrawer]} >
@@ -37,7 +41,7 @@ export default function Sidebar() {
           <List key={iconGroup}>
             {icons[iconGroup].map((icon,index)=>(
               <ListItem disablePadding sx={{ display: 'block' }} key={index}
-               onClick={()=>{navigate(`${icon.route}`); if (icon.name==='Log Out')handleLogout()}}
+               onClick={()=>{icon.name==='Log Out'?handleLogout():navigate(`${icon.route}`)}}
                >
               <ListItemButton
                 sx={{
