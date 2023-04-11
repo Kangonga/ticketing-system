@@ -8,11 +8,9 @@ import { fetchDevelopers } from '../../../data/fetchData'
 import { Container } from '../../../shared/styles/styles';
 import Sidebar from '../../../shared/components/sidebar/Sidebar';
 import Topbar from '../../../shared/components/topbar/Topbar';
-import { useContext } from 'react';
-import { UserContext } from '../../../context/UserContext';
+
 
 export default function DataTable() {
-  const {user} = useContext(UserContext)
   const navigate = useNavigate()
   const { isLoading, isError, data, error } = useQuery(["fetchDevs"],fetchDevelopers, {networkMode:'offlineFirst'})
   if(isLoading)return "Loading";
