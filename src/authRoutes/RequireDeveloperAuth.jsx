@@ -6,8 +6,9 @@ import { Route, useNavigate } from 'react-router-dom'
 export default function RequireDeveloperAuth() {
     const navigate = useNavigate()
     const userLoggedIn = useSelector(state=>state.auth.userLoggedIn)
+    const userRole = useSelector((state)=>state.auth.userInfo.role)
     useEffect(()=>{
-        if(!userLoggedIn)navigate('/')
+        if(!userLoggedIn || userRole!=='developer')navigate('/')
     },[])
   return (
     <Route path="/dev">
