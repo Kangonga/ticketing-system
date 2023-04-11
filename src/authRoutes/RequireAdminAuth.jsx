@@ -19,8 +19,9 @@ export default function RequireAdminAuth({children}) {
   const navigate = useNavigate()
 
 const userLoggedIn = useSelector((state)=>state.auth.isLoggedIn)
+const userRole = useSelector((state)=>state.auth.userInfo.role)
 useEffect(()=>{
-  if(!userLoggedIn)navigate('/')
+  if(!userLoggedIn || userRole!=='admin')navigate('/')
 },[])
   return (
     <>
