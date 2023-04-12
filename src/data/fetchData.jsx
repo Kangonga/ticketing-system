@@ -18,3 +18,19 @@ export const fetchChats = async()=> {
     const data = await res.json()
     return data
 }
+
+export const fetchDeveloper = async(id)=> {
+    const res = await fetch(`http://localhost:5000/developers/${id}`)
+    const data = await res.json()
+    return data
+}
+export const fetchTicket = async(id)=> {
+    const res = await fetch(`http://localhost:5000/tickets/${id}`)
+    const data = await res.json()
+    return data
+}
+export const fetchAgent = async(id)=> {
+    const res = await fetch(`http://localhost:5000/agents/${id}`)
+    const data = await res.json()
+    return data
+}
