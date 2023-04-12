@@ -20,7 +20,7 @@ export default function AdminLogin() {
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    dispatch(fetchUser()).then(()=>navigate('/developer'))
+    dispatch(fetchUser()).then(()=>navigate('/agent'))
   }
   return (
     <Container>
