@@ -23,8 +23,8 @@ export default function App(){
                                 <Route path="/" element={<Login />} />
                                 <Route path="/admin/login" element={<Login />} />
                                 <Route path="admin/*" element={<RequireAdminAuth />} />
-                                <Route path="dev/*" element={<RequireDeveloperAuth />} />
-                                <Route path="/agents" element={<RequireAgentAuth />} />
+                                <Route path="developer/*" element={<RequireDeveloperAuth />} />
+                                <Route path="agent/*" element={<RequireAgentAuth />} />
                             </Routes>
                     </ThemeContext.Provider>
                 </QueryClientProvider>
