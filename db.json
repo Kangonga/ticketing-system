@@ -7,7 +7,19 @@
       "role": "admin"
     }
   ],
-  "agents": [],
+  "agents": [
+    {
+      "id": "agent2023MJ48",
+      "firstName": "garden",
+      "lastName": "mall",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "agent"
+    }
+  ],
   "developers": [
     {
       "id": "dev2023MJ48",
@@ -296,6 +308,18 @@
           "senderName": "admin",
           "data": "2: Add an assign button to the ticket on the developer side that will assign the ticket to the specific developer",
           "time": "9:02"
+        },
+        {
+          "senderId": "dev2023MJ48",
+          "senderName": "hane",
+          "data": "=> Issues 1,2,5 solved",
+          "time": "12/3/2023| 13:03"
+        },
+        {
+          "senderId": "dev2023MJ48",
+          "senderName": "hane",
+          "data": "=> Issue 6 complete",
+          "time": "12/3/2023| 14:22"
         }
       ]
     },
@@ -340,6 +364,18 @@
           "senderName": "admin",
           "data": "4: Profile Page => Include agent specific fields, fetch agent specific data. Enable updating of details. Stretch goals: Add profile card with the opened tickets and user details, plus area chart with opened tickets over time and the ticket sources chart",
           "time": "23:50"
+        },
+        {
+          "senderId": "dev2023MJ48",
+          "senderName": "hane",
+          "data": "Remaining part: Fetching data and stretch goals",
+          "time": "12/3/2023| 14:25"
+        },
+        {
+          "senderId": "agent2023MJ48",
+          "senderName": "garden",
+          "data": "=> Check if the message bears the agent name",
+          "time": "12/3/2023| 15:07"
         }
       ]
     },
