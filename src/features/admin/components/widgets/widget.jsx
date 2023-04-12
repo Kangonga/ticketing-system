@@ -64,10 +64,20 @@ export default function Widget({ type }){
                     route: 'tickets',
                     color:'#89EC79'
                 };
+            break;
+            case "devClosedTickets":
+                data = {
+                    title: 'My total closed Tickets',
+                    body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
+                    linkText: 'See all tickets',
+                    icon: <Groups2Outlined />,
+                    route: 'tickets',
+                    color:'#89EC79'
+                };
                 break;
-                case "devClosedTickets":
+                case "devTotalOpenTickets":
                     data = {
-                        title: 'My total closed Tickets',
+                        title: 'Total open Tickets',
                         body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
                         linkText: 'See all tickets',
                         icon: <Groups2Outlined />,
@@ -75,9 +85,9 @@ export default function Widget({ type }){
                         color:'#89EC79'
                     };
                     break;
-                    case "devTotalOpenTickets":
+                    case "agentOpenTickets":
                         data = {
-                            title: 'Total open Tickets',
+                            title: 'Total opened Tickets',
                             body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
                             linkText: 'See all tickets',
                             icon: <Groups2Outlined />,
@@ -85,7 +95,7 @@ export default function Widget({ type }){
                             color:'#89EC79'
                         };
                         break;
-        default:
+            default:
             break
     }
     return (
