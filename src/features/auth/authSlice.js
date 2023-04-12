@@ -26,7 +26,7 @@ export const fetchUser = createAsyncThunk(
     'auth/login',
     async ()=>{
         const response = await axios
-            .get('http://localhost:5000/developers');
+            .get('http://localhost:5000/agents');
         return response.data[0];
     }
 )
