@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import Sidebar from '../../../../shared/components/sidebar/Sidebar'
 import { Container } from '../../../../shared/styles/styles'
 import Topbar from '../../../../shared/components/topbar/Topbar'
@@ -7,8 +6,6 @@ import TicketSourcesChart from '../../components/ticketSourcesChart/TicketSource
 import Widget from '../../components/widgets/widget'
 import { Charts,  ComponentContainer, Widgets } from './styles'
 import { Typography } from '@mui/material'
-import { UserContext } from '../../../../context/UserContext'
-import { Navigate, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
 export default function AdminDashboard() {
