@@ -9,16 +9,18 @@ import Topbar from '../../components/topbar/Topbar'
 import { Container } from '../../styles/styles'
 import { ChatContainer, ChatIntro, ChatMessages, ComponentContainer, CreateMessageBox, MessageCard } from './styles'
 import { fetchTickets } from '../../../data/fetchData'
+import { useSelector } from 'react-redux'
 
 export default function TicketChat() {
 const date = new Date()
 const params = useParams()
+const user = useSelector((state)=>state.auth.userInfo)
 const ticketId = params.ticketId
 const [isTicketUpdated, setIsTicketUpdated] = useState(false)
 const [isTicketOpen, setIsTicketOpen] = useState(true)
 const [message, setMessage] = useState({
-    senderId:'admin',
-    senderName:'admin',
+    senderId:user?.id,
+    senderName:user?.firstName,
     data:'',
     time:''
 })
@@ -33,8 +35,8 @@ function handleSubmitMessage(){
     const updated = {...ticket, messages:[...ticket.messages,message]}
     patchTicket(updated, ticketId).then(setIsTicketUpdated(!isTicketUpdated))
     setMessage({
-        senderId:'admin',
-        senderName:'admin',
+        senderId:user?.id,
+        senderName:user?.firstName,
         data:'',
         time:''
     })
@@ -64,7 +66,8 @@ function handleSubmitMessage(){
                             <br />
                             <Box display='flex' gap='1rem' fontSize='.8rem' color='gray'>
                                 <span>sent by:{message.senderName}</span>
-                                <span>at: {message?.time?.split(':')[0]}:{message?.time?.split(':')[1]} hours</span>
+                                {/* <span>at: {message?.time?.split(':')[0]}:{message?.time?.split(':')[1]} hours</span> */}
+                                <span>at: {`${message.time.split('|')[0]} at ${message.time.split('|')[1]}`}</span>
                             </Box>
                         </MessageCard>
                     })}
@@ -73,7 +76,7 @@ function handleSubmitMessage(){
                 <CreateMessageBox placeholder='TYPE TICKET RELATED MESSAGE HERE' value={message.data} onChange={(e)=>{setMessage({
                     ...message,
                     data:e.target.value,
-                    time:`${date.getHours()}:${date.getMinutes()<10?`0${date.getMinutes()}`:date.getMinutes()}`
+                    time:`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}| ${date.getHours()}:${date.getMinutes()<10?`0${date.getMinutes()}`:date.getMinutes()}`
                 })}}> 
                 </CreateMessageBox>
                 <Button onClick={handleSubmitMessage}sx={{bgcolor:'coral', width:'max-content', padding:'.5rem 1rem'}}>Submit</Button>
