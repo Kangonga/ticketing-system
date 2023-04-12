@@ -1,0 +1,538 @@
+{
+  "admin": [
+    {
+      "id": "admin2023ZK97",
+      "firstName": "admin",
+      "secondName": "one",
+      "role": "admin"
+    }
+  ],
+  "agents": [],
+  "developers": [
+    {
+      "id": "dev2023MJ48",
+      "firstName": "hane",
+      "lastName": "doe",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "developer"
+    },
+    {
+      "id": "dev2023FB98",
+      "firstName": "john",
+      "lastName": "doe",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "developer"
+    },
+    {
+      "id": "dev2023ZF52",
+      "firstName": "ayra",
+      "lastName": "starl",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "developer"
+    },
+    {
+      "id": "dev2023IK72",
+      "firstName": "ayra",
+      "lastName": "doe",
+      "tickets": "0",
+      "imgUrl": "",
+      "email": "mail@mail.com",
+      "password": "12345",
+      "status": "offline",
+      "role": "developer"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "ticket2023RB67",
+      "title": "Authentication",
+      "description": "Currently there is no authentication. Need to add authentication to ensure there is no access without authentication, and that I can access the authenticated user throughout the application",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "closed",
+      "createdAt": "2023/4/7/21:28",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Step one: Create user context that is accessible throughout the app. check in several nested pages that the current user is accessible",
+          "time": "6:21"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "step two: Set default page to login page. Upon successful login, redirect to dashboard and set the global user context",
+          "time": "6:23"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Step three: Upon login, store the current user in the local storage. Upon log out delete this entry",
+          "time": "6:23"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Step four: Protected routes: The routes should all be protected such that they cannot be navigated to without an active user. Always redirect to login page in such cases.",
+          "time": "6:25"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "All four steps done",
+          "time": "19:14"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Bugs Encountered:\n\n=> How to set user data in local storage, and navigate away if that is not the case.\nSolved with the following code:\n\nuseEffect(()=>{\n   if(uData && uData.role==='admin') setUser({...user, name:uData.name, role:uData.role});\n   else navigate('/admin/login')\n},[])",
+          "time": "19:16"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023OK84",
+      "title": "Persists Authentication",
+      "description": "I should be able to persist the state of the logged in user in the localhost. Upon authentication, the user status should be stored in the local storage and erased upon logging out",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "closed",
+      "createdAt": "2023/4/7/21:48",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Done\n",
+          "time": "6:46"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023YA33",
+      "title": "redux",
+      "description": "persist user state using redux. Stretch goal: store additional user data such as theme settings",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "closed",
+      "createdAt": "2023/4/8/4:13",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Where to include redux",
+          "time": "9:23"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Currently working on the admin feature.",
+          "time": "9:25"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Handle the login status of the admin. Since there is no active backend at the moment, just query the admin endpoint, and use the received data to set the state of the current user. ",
+          "time": "9:56"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: When the user logs out, clear the state and reset to initial state",
+          "time": "9:57"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Check if the state of the user is accessible into the nested components/routes, and whether it can be mutated then",
+          "time": "9:58"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Protect routes depending on the role of the current user",
+          "time": "10:01"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: Use redux persist to persist the state across re-renders",
+          "time": "10:10"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023CJ63",
+      "title": "Role specific features",
+      "description": "I should be able to access features based on my role. The dashboard, sidebar and routes available should be role specific. CRUD actions should also be role specific",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:29",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Using redux, I should be able to display only specific routes and features depending on the role of the logged in user",
+          "time": "10:12"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Developer\n\nDashboard features: online status, assigned tickets, closed tickets, all tickets, closed today, name\n\nSide bar features: Dashboard, tickets, log out, theme, my profile",
+          "time": "10:45"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Agent Dashboard features: online status, created tickets, create new ticket, ticket sources, name.\n\n  Sidebar features: dashboard, all tickets, my tickets, log out, theme, my profile",
+          "time": "10:47"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Developer ticket permissions: View, assign to self (if open), close, add ticket messages.",
+          "time": "10:49"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: Agent ticket permissions: View, create, add ticket messages\n\n",
+          "time": "10:55"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023CH78",
+      "title": "Developer actions",
+      "description": "As a developer I should be able to access developer specific features. From the dashboard, sidebar to crud actions. I should also have data fetched specific to me.",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:29",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "These are the Features to implement on the developer side of things\n",
+          "time": "23:31"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Dashboard => Online status, assigned tickets, closed tickets, total open tickets. Data table with assigned tickets",
+          "time": "23:32"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Sidebar => Dashboard, tickets, profile, log out",
+          "time": "23:33"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Profile Page => Include developer specific roles, fetch developer specific data. Enable updating of details.",
+          "time": "23:34"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Tickets page => Remove create ticket option. Create three tabs at the top to toggle open, assigned to me and closed",
+          "time": "23:36"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: TicketChat => Ticket messages should bear the name of the developer",
+          "time": "23:36"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "6: Routes => Polish out all developer routes and link them to corresponding components",
+          "time": "23:39"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Stretch Goals\n",
+          "time": "23:42"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Add profile card with user details, the closed tickets progress bar and areachart denoting tickets closed over time on the dashboard and profile pages",
+          "time": "23:45"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Add an assign button to the ticket on the developer side that will assign the ticket to the specific developer",
+          "time": "9:02"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023FY16",
+      "title": "Agent actions",
+      "description": "As an agent I should be able to access agent specific features. I should also have data fetched specific to me",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:32",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "These are the features to be implemented on the agent side",
+          "time": "23:37"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Dashboard => online status, created tickets, create new ticket, ticket sources. \n Datatable with opened tickets. Stretch Goal: Create chart with ticket sources and area chart with opened tickets over time\n ",
+          "time": "23:41"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Sidebar features: dashboard, tickets, log out, theme, my profile",
+          "time": "23:46"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Agent ticket permissions: View, create, add ticket messages. Remove close ticket button\n",
+          "time": "23:47"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Profile Page => Include agent specific fields, fetch agent specific data. Enable updating of details. Stretch goals: Add profile card with the opened tickets and user details, plus area chart with opened tickets over time and the ticket sources chart",
+          "time": "23:50"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023DR14",
+      "title": "Admin actions",
+      "description": "As an admin I should be able to access admin specific features and CRUD actions. I should also have data fetched specific to me.",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "high",
+      "status": "open",
+      "createdAt": "2023/4/8/5:48",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023OF27",
+      "title": "UI theme",
+      "description": "As a user I should be able to choose between dark and light theme ",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/8/6:07",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023VP31",
+      "title": "UI",
+      "description": "As a user I should find the UI appeasing, uniform and clean. From the buttons, data tables, to pages",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/8/6:16",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023PA65",
+      "title": "Utilities page",
+      "description": "As an admin I should have a utilities page that aggregates various data from the web app and displays it in form of charts. From the most active sources, agents, devs, to average waiting times, online devs/agents etc",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/8/6:16",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023UB83",
+      "title": "TicketChat",
+      "description": "The ticket chat page has many features and functionalities. I am creating a ticket whereby I will add the individual issues as chats",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/9/6:47",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Add date in addition to time to the message object\n",
+          "time": "6:49"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023IC27",
+      "title": "Learning redux",
+      "description": "This is the process I will use to learn the remaining parts of redux",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "medium",
+      "status": "open",
+      "createdAt": "2023/4/9/9:03",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Each session will be 45 minutes long",
+          "time": "9:06"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Go through fundamentals, multiple reducers, immer, middleware",
+          "time": "9:10"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Async actions and Thunk.",
+          "time": "9:10"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Redux toolkit fundamentals. 17-21",
+          "time": "9:11"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Logger middleware, extra reducers, async thunks",
+          "time": "9:12"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: React-redux 25-30",
+          "time": "9:13"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "After every session, write what I have learnt here in the chat, with details on the Duration, important points etc",
+          "time": "9:14"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Remaining part: async thunk review and react redux",
+          "time": "9:55"
+        }
+      ]
+    },
+    {
+      "id": "ticket2023OU45",
+      "title": "Create Ticket form",
+      "description": "Modify create ticket form to use drop downs for fields with limited input options. ",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/9/9:03",
+      "closedAt": "null",
+      "messages": []
+    },
+    {
+      "id": "ticket2023WI67",
+      "title": "Tickets feature",
+      "description": "This is where I will write all issues I plan on working on in regards to the functionality of the tickets",
+      "agent": "admin",
+      "developer": {},
+      "source": "other",
+      "priority": "low",
+      "status": "open",
+      "createdAt": "2023/4/11/10:06",
+      "closedAt": "null",
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: I must move the ticket chats and create ticket functionalities from the shared to the ticket feature. This is because the ticket is not self managing either way, and will always be shared by the admin, devs and agents",
+          "time": "10:08"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Add a date to the ticket chat messages, in addition to the current time",
+          "time": "10:09"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Add rich text functionality to the ticket chat and create ticket inputs",
+          "time": "10:21"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Add customer field when creating a ticket. This will identify customer details eg name, number, email etc\n\ncan also be an object that will store the above info",
+          "time": "10:54"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: Add date to the tickets data grid",
+          "time": "10:56"
+        }
+      ]
+    }
+  ]
+}
