@@ -55,6 +55,36 @@ export default function Widget({ type }){
                 color:'#89EC79'
             };
             break;
+            case "devOpenTickets":
+                data = {
+                    title: 'Tickets in Progress',
+                    body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
+                    linkText: 'See all tickets',
+                    icon: <Groups2Outlined />,
+                    route: 'tickets',
+                    color:'#89EC79'
+                };
+                break;
+                case "devClosedTickets":
+                    data = {
+                        title: 'My total closed Tickets',
+                        body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
+                        linkText: 'See all tickets',
+                        icon: <Groups2Outlined />,
+                        route: 'tickets',
+                        color:'#89EC79'
+                    };
+                    break;
+                    case "devTotalOpenTickets":
+                        data = {
+                            title: 'Total open Tickets',
+                            body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
+                            linkText: 'See all tickets',
+                            icon: <Groups2Outlined />,
+                            route: 'tickets',
+                            color:'#89EC79'
+                        };
+                        break;
         default:
             break
     }
