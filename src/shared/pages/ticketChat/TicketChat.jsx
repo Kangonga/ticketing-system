@@ -1,7 +1,6 @@
 import { Box, Button, Typography } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
-import { IdGenerator } from 'custom-random-id'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {  patchTicket } from '../../../data/patchData'
 import Sidebar from '../../components/sidebar/Sidebar'
@@ -51,7 +50,7 @@ function handleSubmitMessage(){
             <Typography>Title: {ticket?.title}</Typography>
                 <ChatIntro>
                     <Typography>Ticket id: {ticket?.id}</Typography>
-                    <Button onClick={handleCloseTicket} sx={{backgroundColor:'coral', width:'max-content'}}>
+                    <Button onClick={handleCloseTicket} sx={{backgroundColor:'coral', width:'max-content', display:user.role==='admin' || user.role==='developer'?"block":"none"}}>
                         {isTicketOpen?'close':'open'} ticket
                     </Button>
                 </ChatIntro>
