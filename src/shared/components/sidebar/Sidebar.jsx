@@ -17,7 +17,7 @@ export default function Sidebar() {
   const [openDrawer, setOpenDrawer] = useState(false)
   const handleLogout = ()=>{
     dispatch(authActions.logout())
-    navigate('/');
+    navigate('/',{replace:true});
   }
   return (
     <Box value={[openDrawer,setOpenDrawer]} >
@@ -214,7 +214,9 @@ export default function Sidebar() {
         </List>
           
         <List>
-            <ListItem disablePadding sx={{ display: 'block' }}>
+            <ListItem disablePadding sx={{ display: 'block' }}
+              onClick={handleLogout}
+            >
             <ListItemButton
                 sx={{
                   minHeight: 48,
