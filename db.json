@@ -4,7 +4,7 @@
       "id": "admin2023ZK97",
       "firstName": "admin",
       "secondName": "one",
-      "role":"admin"
+      "role": "admin"
     }
   ],
   "agents": [],
@@ -133,7 +133,7 @@
       "developer": "null",
       "source": "other",
       "priority": "high",
-      "status": "open",
+      "status": "closed",
       "createdAt": "2023/4/8/4:13",
       "closedAt": "null",
       "messages": [
@@ -236,7 +236,68 @@
       "status": "open",
       "createdAt": "2023/4/8/5:29",
       "closedAt": "null",
-      "messages": []
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "These are the Features to implement on the developer side of things\n",
+          "time": "23:31"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Dashboard => Online status, assigned tickets, closed tickets, total open tickets. Data table with assigned tickets",
+          "time": "23:32"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Sidebar => Dashboard, tickets, profile, log out",
+          "time": "23:33"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Profile Page => Include developer specific roles, fetch developer specific data. Enable updating of details.",
+          "time": "23:34"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Tickets page => Remove create ticket option. Create three tabs at the top to toggle open, assigned to me and closed",
+          "time": "23:36"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "5: TicketChat => Ticket messages should bear the name of the developer",
+          "time": "23:36"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "6: Routes => Polish out all developer routes and link them to corresponding components",
+          "time": "23:39"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "Stretch Goals\n",
+          "time": "23:42"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Add profile card with user details, the closed tickets progress bar and areachart denoting tickets closed over time on the dashboard and profile pages",
+          "time": "23:45"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Add an assign button to the ticket on the developer side that will assign the ticket to the specific developer",
+          "time": "9:02"
+        }
+      ]
     },
     {
       "id": "ticket2023FY16",
@@ -249,7 +310,38 @@
       "status": "open",
       "createdAt": "2023/4/8/5:32",
       "closedAt": "null",
-      "messages": []
+      "messages": [
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "These are the features to be implemented on the agent side",
+          "time": "23:37"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "1: Dashboard => online status, created tickets, create new ticket, ticket sources. \n Datatable with opened tickets. Stretch Goal: Create chart with ticket sources and area chart with opened tickets over time\n ",
+          "time": "23:41"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "2: Sidebar features: dashboard, tickets, log out, theme, my profile",
+          "time": "23:46"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "3: Agent ticket permissions: View, create, add ticket messages. Remove close ticket button\n",
+          "time": "23:47"
+        },
+        {
+          "senderId": "admin",
+          "senderName": "admin",
+          "data": "4: Profile Page => Include agent specific fields, fetch agent specific data. Enable updating of details. Stretch goals: Add profile card with the opened tickets and user details, plus area chart with opened tickets over time and the ticket sources chart",
+          "time": "23:50"
+        }
+      ]
     },
     {
       "id": "ticket2023DR14",
