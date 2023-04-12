@@ -1,11 +1,10 @@
 import * as yup from 'yup'
 import { Container, SmallText } from './styles'
 import { Formik } from 'formik'
-import { useContext, useState } from 'react'
+import {  useState } from 'react'
 import { TextField , InputAdornment, IconButton, Typography, Button } from '@mui/material'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
-import { UserContext } from '../../../context/UserContext'
 import { fetchUser } from '../../../features/auth/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -18,13 +17,10 @@ export default function AdminLogin() {
     email:"",
     password:""
   })
-  const schema = yup.object().shape({
-    email: yup.string().email().required('please input your email'),
-    password: yup.string().required('please input your password')
-  })
+
   const handleSubmit = (e)=>{
     e.preventDefault()
-    dispatch(fetchUser()).then(()=>navigate('/admin'))
+    dispatch(fetchUser()).then(()=>navigate('/developer'))
   }
   return (
     <Container>
@@ -58,7 +54,7 @@ export default function AdminLogin() {
                     <Button sx={{ width:'max-content', padding:'0.5rem 1rem',backgroundColor:'coral',margin:'auto'}} type='submit'>Submit</Button>
             </form>
       <SmallText>
-        <Typography variant='p' fontSize='.9rem'>Forgot Password? Request  a new password</Typography>
+        <Typography variant='p' fontSize='.9rem'>Forgot Password? Request a new password</Typography>
       </SmallText>
     </Container>
   )
