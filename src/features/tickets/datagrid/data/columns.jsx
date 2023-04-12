@@ -38,7 +38,13 @@ export const ticketColumns = [
     { field: 'title', headerName: 'title', width: 200 },
     { field: 'agent', headerName: 'Reported by', width: 130 },
     { field: 'status', headerName: 'Status', width: 80 },
-    { field: 'developer', headerName: 'Assignee', width: 130},
+    { 
+      field: 'developer',
+      headerName: 'Assignee', width: 130,
+      renderCell:(params)=>{
+        return params.row.developer.id?params.row.developer.firstName:"unassigned"
+      }
+    },
     { field: 'source', headerName: 'Source', width: 80 },
     { field: 'priority', headerName: 'Priority', width: 80 },
 ];
