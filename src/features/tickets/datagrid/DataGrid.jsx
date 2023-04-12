@@ -64,7 +64,7 @@ export default function TicketsDataTable() {
     renderCell: (params)=> {
       return (
         <Actions>
-            <div onClick={e=>handleAssign(e,params)} className="view">
+            <div onClick={e=>handleAssign(e,params)} className="view"  style={{display:loggedInUser.role==='admin'|| loggedInUser.role==='developer'?"inline":"none"}}>
                 {!params.row.developer.id?"Self assign":"assigned"}
             </div>
 
