@@ -6,6 +6,7 @@ import AgentDashboard from '../features/agents/pages/agentDashboard/AgentDashboa
 import TicketsDataTable from '../features/tickets/datagrid/DataGrid'
 import TicketChat from '../shared/pages/ticketChat/TicketChat'
 import Profile from '../shared/pages/profilePage/Profile'
+import CreateTicket from '../shared/pages/createTickets/CreateTicket'
 
 export default function RequireAgentAuth() {
     const navigate = useNavigate()
@@ -21,6 +22,7 @@ export default function RequireAgentAuth() {
             <Route index element={<AgentDashboard />} />
             <Route path="tickets">
                 <Route index element={<TicketsDataTable />} />
+                <Route path='new' element={<CreateTicket />} />
                 <Route path=':ticketId' element={<TicketChat />} />
             </Route>
             <Route path='profile' element={<Profile />} />
