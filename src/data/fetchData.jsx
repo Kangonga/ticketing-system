@@ -34,3 +34,10 @@ export const fetchAgent = async(id)=> {
     const data = await res.json()
     return data
 }
+
+export const fetchAgentOpenTickets = async(id)=> {
+    const res = await fetch('http://localhost:5000/tickets')
+    const data = await res.json()
+    const agentOpenedTickets = data.filter(ticket=>ticket.agent.id===id)
+    return agentOpenedTickets
+}

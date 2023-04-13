@@ -3,13 +3,15 @@ import {  IconButton, Typography } from "@mui/material";
 import { useQuery } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 import { Container, WidgetFooter } from "./styles";
-import { fetchAgents, fetchDevelopers, fetchTickets } from '../../../../data/fetchData'
+import { fetchAgentOpenTickets, fetchAgents, fetchDevelopers, fetchTickets } from '../../../../data/fetchData'
+import { useSelector } from "react-redux";
 
 export default function Widget({ type }){
+    const user = useSelector(state=>state.auth.userInfo)
     const devNumber = useQuery(["fetchDevNum"], fetchDevelopers, {networkMode:'offlineFirst'})
     const agentNumber = useQuery(["fetchAgentNum"], fetchAgents, {networkMode:'offlineFirst'})
     const ticketNumber = useQuery(["fetchTicketNum"], fetchTickets, {networkMode:'offlineFirst'})
-
+    const agentOpenTickets = useQuery(["fetchAgentOpenTickets"], ()=>fetchAgentOpenTickets(user.id), {networkMode:'offlineFirst'})
     let data = {}
     const navigate = useNavigate()
 
@@ -87,14 +89,24 @@ export default function Widget({ type }){
                     break;
                     case "agentOpenTickets":
                         data = {
-                            title: 'Total opened Tickets',
-                            body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
+                            title: 'My Total opened Tickets',
+                            body:agentOpenTickets.isFetched?agentOpenTickets.data.length:'loading',
                             linkText: 'See all tickets',
                             icon: <Groups2Outlined />,
                             route: 'tickets',
                             color:'#89EC79'
                         };
                         break;
+                        case "agentTotalTickets":
+                            data = {
+                                title: 'All open Tickets',
+                                body:ticketNumber.isFetched?ticketNumber.data.length:'loading',
+                                linkText: 'See all tickets',
+                                icon: <Groups2Outlined />,
+                                route: 'tickets',
+                                color:'#89EC79'
+                            };
+                            break;
             default:
             break
     }
