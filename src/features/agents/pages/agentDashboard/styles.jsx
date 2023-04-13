@@ -21,13 +21,14 @@ export const ChartContainer = styled('div')(({ theme })=>({
 export const AreaChartContainer = styled('div')(({ theme })=>({
     minWidth:'25rem',
     height: '280px',
+    maxWidth:'30rem',
     borderRadius: ' 10px',
     boxShadow: ' 2px 2px 5px rgba(0, 0, 0, 0.3)',
     padding: ' 20px',
     gap:'.75rem',
 }))
-export const TicketSourcesContainer = styled('div')(({ theme })=>({
+export const TicketSourceContainer = styled('div')(({ theme })=>({
     height: '250px',
     minWidth:'25rem',
-    maxWidth:'30rem',
+    maxWidth:'26rem',
 }))
