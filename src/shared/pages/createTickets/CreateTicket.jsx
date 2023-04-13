@@ -9,28 +9,30 @@ import * as yup from 'yup'
 import { IdGenerator } from 'custom-random-id'
 import { postTickets } from '../../../data/postData'
 import { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 export default function CreateTicket({ user }) {
     const date = new Date()
+    const userInfo = useSelector((state)=>state.auth.userInfo)
     const [initialValues, setInitialValues] = useState({
         id: new IdGenerator(`ticket${date.getFullYear()}{{ string_2 }}{{ number_2 }}`).getFinalExpression(),
         title:'',
         description:'',
-        agent:'',
-        developer:'',
+        agent:{},
+        developer:{},
         source:'',
         priority:'',
         status:'',
         createdAt:`${date.getFullYear()}/${date.getMonth()+1}/${date.getDate()}/${date.getHours()}:${date.getMinutes()<10?'0'+date.getMinutes():date.getMinutes()}`,
-        closedAt:'',
+        closedAt:'null',
         messages:[]
     })
     const schema = yup.object().shape({
         id: yup.string(),
         title: yup.string().required('First name is required'),
         description: yup.string().required('Last name is required'),
-        agent:yup.string().required('Please enter a valid email'),
-        developer: yup.string().required('Default value should be present'),
+        agent:yup.object().required('Please enter a valid email'),
+        developer: yup.object().required('Default value should be present'),
         source:yup.string(),
         priority:yup.string().required('A default value is required'),
         status:yup.string().required('default status is required'),
@@ -50,7 +52,16 @@ export default function CreateTicket({ user }) {
                 <Formik
                     enableReinitialize
                     onSubmit={(values, { resetForm,setSubmitting,setFieldValue })=>{
-                        postTickets(values)
+                        const updateFormValues = {
+                            ...values,
+                            agent:{
+                                id: userInfo.id,
+                                firstName: userInfo.firstName,
+                                lastName: userInfo.lastName,
+                                email: userInfo.email
+                            }
+                        }
+                        postTickets(updateFormValues)
                         setInitialValues({
                             ...initialValues,
                             id: new IdGenerator(`ticket${date.getFullYear()}{{ string_2 }}{{ number_2 }}`).getFinalExpression(),
@@ -71,11 +82,12 @@ export default function CreateTicket({ user }) {
                                     variant='filled'
                                     label={data}
                                     name={data}
-                                    disabled={data==='messages'||data==='id'?true:false}
+                                    disabled={data==='id'||data==='closedAt'?true:false}
                                     value = {values[data]}
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                     error={!!touched[data] && !!errors[data]}
+                                    sx={{display:data==='developer'||data==='agent'||data==="messages"?"none":"inherit"}}
                                     >
                                 </TextField> 
                                 })}
